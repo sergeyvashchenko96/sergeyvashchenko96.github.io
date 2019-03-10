@@ -20,14 +20,14 @@ webpackEmptyAsyncContext.id = "./src/$$_lazy_route_resource lazy recursive";
 /***/ "./src/app/add-client/add-client.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<h1 class=\"title-navbar\">Новий кліент</h1>\n<section class=\"add-client\">\n  <mat-form-field>\n    <input matInput placeholder=\"Код клієнта\">\n  </mat-form-field>\n  <mat-form-field>\n    <input matInput placeholder=\"Телефон\">\n  </mat-form-field>\n  <mat-form-field>\n    <input matInput placeholder=\"Прізвище\">\n  </mat-form-field>\n  <mat-form-field>\n    <input matInput placeholder=\"Ім’я\">\n  </mat-form-field>\n  <mat-form-field>\n    <input matInput placeholder=\"По батькові\">\n  </mat-form-field>\n  <div class=\"date\">\n    <mat-form-field>\n      <input matInput [matDatepicker]=\"picker\" placeholder=\"Дата народження\">\n      <mat-datepicker-toggle matSuffix [for]=\"picker\"></mat-datepicker-toggle>\n      <mat-datepicker #picker></mat-datepicker>\n    </mat-form-field>\n    <mat-form-field>\n      <mat-select placeholder=\"Стать\">\n        <mat-option>\n         Чоловіча\n        </mat-option>\n        <mat-option>\n          Жіноча\n        </mat-option>\n      </mat-select>\n    </mat-form-field>\n  </div>\n  <button class=\"okay\">ОК</button>\n</section>\n"
+module.exports = "<h1 class=\"title-navbar\">Новий кліент</h1>\r\n<br><br>\r\n<section class=\"add-client-section\">\r\n  <mat-form-field>\r\n    <input matInput placeholder=\"Код клієнта\" [(ngModel)]=\"client.code\">\r\n  </mat-form-field>\r\n  <mat-form-field>\r\n    <input matInput placeholder=\"Телефон\" [(ngModel)]=\"client.phone\" type=\"number\">\r\n  </mat-form-field>\r\n  <mat-form-field>\r\n    <input matInput placeholder=\"Прізвище\" [(ngModel)]=\"client.lastname\">\r\n  </mat-form-field>\r\n  <mat-form-field>\r\n    <input matInput placeholder=\"Ім’я\" [(ngModel)]=\"client.firstname\">\r\n  </mat-form-field>\r\n  <mat-form-field>\r\n    <input matInput placeholder=\"По батькові\" [(ngModel)]=\"client.middlename\">\r\n  </mat-form-field>\r\n  <div class=\"date\">\r\n    <mat-form-field>\r\n      <input matInput [matDatepicker]=\"picker\" placeholder=\"Дата народження\" [(ngModel)]=\"client.bithdate\">\r\n      <mat-datepicker-toggle matSuffix [for]=\"picker\"></mat-datepicker-toggle>\r\n      <mat-datepicker #picker></mat-datepicker>\r\n    </mat-form-field>\r\n    <mat-form-field>\r\n      <mat-select placeholder=\"Стать\"  [(ngModel)]=\"client.sex\">\r\n        <mat-option>\r\n         Ч\r\n        </mat-option>\r\n        <mat-option>\r\n          Ж\r\n        </mat-option>\r\n      </mat-select>\r\n    </mat-form-field>\r\n  </div>\r\n  <button class=\"okay\" (click)=\"saveClient()\" routerLink=\"{{url}}\" [disabled]=\"checkData()\" >ОК</button>\r\n</section>\r\n"
 
 /***/ }),
 
 /***/ "./src/app/add-client/add-client.component.scss":
 /***/ (function(module, exports) {
 
-module.exports = ".add-client {\n  padding: 0 18px; }\n  .add-client mat-form-field {\n    width: 100%; }\n  .add-client .date {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-orient: horizontal;\n    -webkit-box-direction: normal;\n        -ms-flex-direction: row;\n            flex-direction: row;\n    -webkit-box-pack: justify;\n        -ms-flex-pack: justify;\n            justify-content: space-between;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center; }\n  .add-client .date mat-form-field {\n      margin-right: 16px; }\n  .add-client .okay {\n    height: 44px;\n    border-radius: 2px;\n    background-color: #2c93f3;\n    font-size: 18px;\n    font-weight: 500;\n    font-style: normal;\n    font-stretch: normal;\n    line-height: normal;\n    letter-spacing: normal;\n    text-align: center;\n    color: #ffffff;\n    border: 0;\n    width: 100%;\n    margin: 0 auto; }\n"
+module.exports = ".add-client-section {\n  padding: 0 18px; }\n  .add-client-section mat-form-field {\n    width: 100%; }\n  .add-client-section .date {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-orient: horizontal;\n    -webkit-box-direction: normal;\n        -ms-flex-direction: row;\n            flex-direction: row;\n    -webkit-box-pack: justify;\n        -ms-flex-pack: justify;\n            justify-content: space-between;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center; }\n  .add-client-section .date mat-form-field {\n      margin-right: 16px; }\n  .add-client-section .okay {\n    height: 44px;\n    border-radius: 2px;\n    background-color: #bdbdbd;\n    font-size: 18px;\n    font-weight: 500;\n    font-style: normal;\n    font-stretch: normal;\n    line-height: normal;\n    letter-spacing: normal;\n    text-align: center;\n    color: #ffffff;\n    border: 0;\n    width: 100%;\n    margin: 0 auto; }\n  .add-client-section .date mat-form-field {\n    width: 50%; }\n  .add-client-section .okay:disabled {\n    pointer-events: none;\n    background-color: #DFDFDF !important;\n    -webkit-box-shadow: none;\n    box-shadow: none;\n    color: #9F9F9F !important;\n    cursor: default; }\n"
 
 /***/ }),
 
@@ -37,6 +37,7 @@ module.exports = ".add-client {\n  padding: 0 18px; }\n  .add-client mat-form-fi
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AddClientComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ngx_webstorage_service__ = __webpack_require__("./node_modules/ngx-webstorage-service/esm5/ngx-webstorage-service.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -46,11 +47,45 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+var __param = (this && this.__param) || function (paramIndex, decorator) {
+    return function (target, key) { decorator(target, key, paramIndex); }
+};
+
+
 
 var AddClientComponent = /** @class */ (function () {
-    function AddClientComponent() {
+    function AddClientComponent(storage) {
+        this.storage = storage;
+        this.client = {
+            code: '',
+            phone: '',
+            lastname: '',
+            firstname: '',
+            middlename: '',
+            bithdate: '',
+            sex: ''
+        };
+        this.url = '';
     }
     AddClientComponent.prototype.ngOnInit = function () {
+        this.url = this.storage.get('url');
+    };
+    AddClientComponent.prototype.saveClient = function () {
+        console.log('saving');
+        var clients = this.storage.get('clients');
+        clients.push(this.client);
+        this.storage.set('clients', clients);
+        var cm = this.storage.get('current_meetting');
+        cm.client = this.client;
+        this.storage.set('current_meetting', cm);
+    };
+    AddClientComponent.prototype.checkData = function () {
+        if (this.client.phone && this.client.lastname.length > 0 && this.client.code.length > 0) {
+            return false;
+        }
+        else {
+            return true;
+        }
     };
     AddClientComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
@@ -58,7 +93,8 @@ var AddClientComponent = /** @class */ (function () {
             template: __webpack_require__("./src/app/add-client/add-client.component.html"),
             styles: [__webpack_require__("./src/app/add-client/add-client.component.scss")]
         }),
-        __metadata("design:paramtypes", [])
+        __param(0, Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Inject */])(__WEBPACK_IMPORTED_MODULE_1_ngx_webstorage_service__["a" /* LOCAL_STORAGE */])),
+        __metadata("design:paramtypes", [Object])
     ], AddClientComponent);
     return AddClientComponent;
 }());
@@ -70,14 +106,14 @@ var AddClientComponent = /** @class */ (function () {
 /***/ "./src/app/app.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<mat-drawer-container class=\"example-container\">\n  <mat-drawer #drawer class=\"example-sidenav\" mode=\"over\" (swipeleft)=\"drawer.close()\">\n    <header>\n      <div class=\"header-child\">\n        <img src=\"../../assets/img/group.png\">\n        <div class=\"name-and-email\">\n          <p class=\"name\">Іванов Іван</p>\n          <p class=\"email\">user@gmail.com</p>\n        </div>\n      </div>\n    </header>\n    <div class=\"main\">\n      <p class=\"menu\">Меню</p>\n      <div class=\"nav-item\" (click)=\"drawer.close()\" routerLink=\"/task\">\n        <div class=\"icon\">\n          <img src=\"../../assets/img/menu-dark.png\">\n        </div>\n        <p class=\"nav-item__text\" (click)=\"drawer.close()\" routerLink=\"/meetings\">Мої завдання</p>\n      </div>\n      <div class=\"nav-item\" (click)=\"drawer.close()\" routerLink=\"/meetings\">\n        <div class=\"icon\">\n          <img src=\"../../assets/img/calendar.png\">\n        </div>\n        <p class=\"nav-item__text\">Мої зустрічі</p>\n      </div>\n      <div class=\"nav-item\" (click)=\"drawer.close()\" routerLink=\"/clients\">\n        <div class=\"icon\">\n          <img src=\"../../assets/img/clients.png\">\n        </div>\n        <p class=\"nav-item__text\">Клієнти</p>\n      </div>\n      <div class=\"nav-item absolute\" (click)=\"drawer.close()\" routerLink=\"/\">\n        <div class=\"icon\">\n          <img src=\"../../assets/img/shut-down.png\">\n        </div>\n        <p class=\"nav-item__text\">Вийти</p>\n      </div>\n    </div>\n  </mat-drawer>\n  <mat-drawer-content (swiperight)=\"drawer.open()\">\n    <div class=\"example-sidenav-content\">\n      <a type=\"button\" mat-button (click)=\"drawer.toggle()\">\n        <img src=\"../../assets/img/sidenav.png\">\n      </a>\n      <img class=\"logo\" src=\"../../assets/img/logo.png\">\n    </div>\n    <router-outlet></router-outlet>\n  </mat-drawer-content>\n</mat-drawer-container>\n"
+module.exports = "<mat-drawer-container class=\"example-container\">\r\n  <mat-drawer #drawer class=\"example-sidenav\" mode=\"over\" (swipeleft)=\"drawer.close()\">\r\n    <header>\r\n      <div class=\"header-child\">\r\n        <img src=\"../../assets/img/group.png\">\r\n        <div class=\"name-and-email\">\r\n          <p class=\"name\">Іванов Іван</p>\r\n          <p class=\"email\">user@gmail.com</p>\r\n        </div>\r\n      </div>\r\n    </header>\r\n    <div class=\"main\">\r\n      <p class=\"menu\">Меню</p>\r\n      <div class=\"nav-item\" (click)=\"drawer.close()\" routerLink=\"/task\">\r\n        <div class=\"icon\">\r\n          <img src=\"../../assets/img/menu-dark.png\">\r\n        </div>\r\n        <p class=\"nav-item__text\" (click)=\"drawer.close()\" routerLink=\"/meetings\">Завдання</p>\r\n      </div>\r\n      <div class=\"nav-item\" (click)=\"drawer.close()\" routerLink=\"/meetings\">\r\n        <div class=\"icon\">\r\n          <img src=\"../../assets/img/calendar.png\">\r\n        </div>\r\n        <p class=\"nav-item__text\">Мої зустрічі</p>\r\n      </div>\r\n      <div class=\"nav-item\" (click)=\"drawer.close()\" routerLink=\"/clients\">\r\n        <div class=\"icon\">\r\n          <img src=\"../../assets/img/clients.png\">\r\n        </div>\r\n        <p class=\"nav-item__text\">Клієнти</p>\r\n      </div>\r\n      <div class=\"nav-item absolute\" (click)=\"drawer.close()\" routerLink=\"/\">\r\n        <div class=\"icon\">\r\n          <img src=\"../../assets/img/shut-down.png\">\r\n        </div>\r\n        <p class=\"nav-item__text\">Вийти</p>\r\n      </div>\r\n    </div>\r\n  </mat-drawer>\r\n  <mat-drawer-content>\r\n    <div class=\"example-sidenav-content\" (swiperight)=\"drawer.open()\">\r\n      <a type=\"button\" mat-button (click)=\"drawer.toggle()\">\r\n        <img src=\"../../assets/img/sidenav.png\">\r\n      </a>\r\n      <img class=\"logo\" src=\"../../assets/img/logo.png\">\r\n    </div>\r\n    <router-outlet ></router-outlet>\r\n  </mat-drawer-content>\r\n</mat-drawer-container>\r\n"
 
 /***/ }),
 
 /***/ "./src/app/app.component.scss":
 /***/ (function(module, exports) {
 
-module.exports = ".example-sidenav-content {\n  height: 55px;\n  -webkit-box-shadow: 0 1px 2px 0 rgba(51, 58, 69, 0.12);\n          box-shadow: 0 1px 2px 0 rgba(51, 58, 69, 0.12);\n  background-color: #202226;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: row;\n          flex-direction: row;\n  -webkit-box-pack: justify;\n      -ms-flex-pack: justify;\n          justify-content: space-between;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  padding: 0 19px; }\n  .example-sidenav-content .logo {\n    width: 51px;\n    height: 51px;\n    margin-top: 16px;\n    z-index: 2; }\n  .mat-drawer-container {\n  height: 100vh; }\n  mat-drawer {\n  width: 85%; }\n  mat-drawer header {\n    height: 91px;\n    background-color: #202226;\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-orient: vertical;\n    -webkit-box-direction: normal;\n        -ms-flex-direction: column;\n            flex-direction: column;\n    -webkit-box-pack: center;\n        -ms-flex-pack: center;\n            justify-content: center; }\n  mat-drawer header .header-child {\n      display: -webkit-box;\n      display: -ms-flexbox;\n      display: flex;\n      -webkit-box-orient: horizontal;\n      -webkit-box-direction: normal;\n          -ms-flex-direction: row;\n              flex-direction: row;\n      -webkit-box-pack: center;\n          -ms-flex-pack: center;\n              justify-content: center;\n      -webkit-box-align: center;\n          -ms-flex-align: center;\n              align-items: center;\n      max-width: 193px;\n      padding-left: 25px; }\n  mat-drawer header .header-child .name-and-email {\n        padding-left: 32px; }\n  mat-drawer header .header-child .name-and-email .name {\n          margin: 0;\n          font-size: 21px;\n          color: #ffffff; }\n  mat-drawer header .header-child .name-and-email .email {\n          font-size: 16px;\n          font-weight: normal;\n          font-style: normal;\n          font-stretch: normal;\n          line-height: 1.31;\n          letter-spacing: normal;\n          color: #838383;\n          margin: 0; }\n  mat-drawer .main {\n    padding-left: 30px; }\n  mat-drawer .main .menu {\n      height: 70px;\n      font-size: 18px;\n      font-weight: normal;\n      font-style: normal;\n      font-stretch: condensed;\n      line-height: 3.89;\n      letter-spacing: normal;\n      color: #7a7a7a; }\n  mat-drawer .main .nav-item {\n      width: 275px;\n      border-top: solid 1px #ededed;\n      height: 63px;\n      display: -webkit-box;\n      display: -ms-flexbox;\n      display: flex;\n      -webkit-box-orient: horizontal;\n      -webkit-box-direction: normal;\n          -ms-flex-direction: row;\n              flex-direction: row;\n      -webkit-box-align: center;\n          -ms-flex-align: center;\n              align-items: center; }\n  mat-drawer .main .nav-item .nav-item__text {\n        font-size: 18px;\n        font-weight: 500;\n        font-style: normal;\n        font-stretch: normal;\n        margin: 0;\n        letter-spacing: normal;\n        color: #000000;\n        padding-left: 19px; }\n  mat-drawer .main .nav-item.absolute {\n      position: absolute;\n      bottom: 0; }\n  mat-drawer .main .nav-item:last-child:not(.absolute) {\n      border-bottom: solid 1px #ededed; }\n"
+module.exports = ".example-sidenav-content {\n  height: 55px;\n  -webkit-box-shadow: 0 1px 2px 0 rgba(51, 58, 69, 0.12);\n          box-shadow: 0 1px 2px 0 rgba(51, 58, 69, 0.12);\n  background-color: #202226;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: row;\n          flex-direction: row;\n  -webkit-box-pack: justify;\n      -ms-flex-pack: justify;\n          justify-content: space-between;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  padding: 0 19px; }\n  .example-sidenav-content .logo {\n    width: 51px;\n    height: 51px;\n    margin-top: 16px;\n    z-index: 2; }\n  .mat-drawer-container {\n  min-height: 100vh;\n  background: #eeeeee; }\n  mat-drawer {\n  width: 85%; }\n  mat-drawer header {\n    height: 91px;\n    background-color: #202226;\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-orient: vertical;\n    -webkit-box-direction: normal;\n        -ms-flex-direction: column;\n            flex-direction: column;\n    -webkit-box-pack: center;\n        -ms-flex-pack: center;\n            justify-content: center; }\n  mat-drawer header .header-child {\n      display: -webkit-box;\n      display: -ms-flexbox;\n      display: flex;\n      -webkit-box-orient: horizontal;\n      -webkit-box-direction: normal;\n          -ms-flex-direction: row;\n              flex-direction: row;\n      -webkit-box-pack: center;\n          -ms-flex-pack: center;\n              justify-content: center;\n      -webkit-box-align: center;\n          -ms-flex-align: center;\n              align-items: center;\n      max-width: 193px;\n      padding-left: 25px; }\n  mat-drawer header .header-child .name-and-email {\n        padding-left: 32px; }\n  mat-drawer header .header-child .name-and-email .name {\n          margin: 0;\n          font-size: 21px;\n          color: #ffffff; }\n  mat-drawer header .header-child .name-and-email .email {\n          font-size: 16px;\n          font-weight: normal;\n          font-style: normal;\n          font-stretch: normal;\n          line-height: 1.31;\n          letter-spacing: normal;\n          color: #838383;\n          margin: 0; }\n  mat-drawer .main {\n    padding-left: 30px; }\n  mat-drawer .main .menu {\n      height: 70px;\n      font-size: 18px;\n      font-weight: normal;\n      font-style: normal;\n      font-stretch: condensed;\n      line-height: 3.89;\n      letter-spacing: normal;\n      color: #7a7a7a; }\n  mat-drawer .main .nav-item {\n      width: 275px;\n      border-top: solid 1px #ededed;\n      height: 63px;\n      display: -webkit-box;\n      display: -ms-flexbox;\n      display: flex;\n      -webkit-box-orient: horizontal;\n      -webkit-box-direction: normal;\n          -ms-flex-direction: row;\n              flex-direction: row;\n      -webkit-box-align: center;\n          -ms-flex-align: center;\n              align-items: center; }\n  mat-drawer .main .nav-item .nav-item__text {\n        font-size: 18px;\n        font-weight: 500;\n        font-style: normal;\n        font-stretch: normal;\n        margin: 0;\n        letter-spacing: normal;\n        color: #000000;\n        padding-left: 19px; }\n  mat-drawer .main .nav-item:focus {\n      outline: none; }\n  mat-drawer .main .nav-item.absolute {\n      position: absolute;\n      bottom: 0; }\n  mat-drawer .main .nav-item:last-child:not(.absolute) {\n      border-bottom: solid 1px #ededed; }\n"
 
 /***/ }),
 
@@ -130,28 +166,36 @@ var AppComponent = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_platform_browser_animations__ = __webpack_require__("./node_modules/@angular/platform-browser/esm5/animations.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_component__ = __webpack_require__("./src/app/app.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__login_login_component__ = __webpack_require__("./src/app/login/login.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__angular_material__ = __webpack_require__("./node_modules/@angular/material/esm5/material.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__task_task_component__ = __webpack_require__("./src/app/task/task.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__angular_material_sidenav__ = __webpack_require__("./node_modules/@angular/material/esm5/sidenav.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__angular_material_expansion__ = __webpack_require__("./node_modules/@angular/material/esm5/expansion.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__search_search_component__ = __webpack_require__("./src/app/search/search.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__clients_clients_component__ = __webpack_require__("./src/app/clients/clients.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__meetings_meetings_component__ = __webpack_require__("./src/app/meetings/meetings.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__create_meeting_create_meeting_component__ = __webpack_require__("./src/app/create-meeting/create-meeting.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__angular_forms__ = __webpack_require__("./node_modules/@angular/forms/esm5/forms.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__create_meeting_second_chips_second_chips_component__ = __webpack_require__("./src/app/create-meeting/second-chips/second-chips.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__angular_material_datepicker__ = __webpack_require__("./node_modules/@angular/material/esm5/datepicker.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17_hammerjs__ = __webpack_require__("./node_modules/hammerjs/hammer.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17_hammerjs___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_17_hammerjs__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18_ngx_filter_pipe__ = __webpack_require__("./node_modules/ngx-filter-pipe/esm5/ngx-filter-pipe.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__add_client_add_client_component__ = __webpack_require__("./src/app/add-client/add-client.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__angular_material_select__ = __webpack_require__("./node_modules/@angular/material/esm5/select.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__services_data_service__ = __webpack_require__("./src/app/services/data.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__angular_material__ = __webpack_require__("./node_modules/@angular/material/esm5/material.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__task_task_component__ = __webpack_require__("./src/app/task/task.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__angular_material_sidenav__ = __webpack_require__("./node_modules/@angular/material/esm5/sidenav.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__angular_material_expansion__ = __webpack_require__("./node_modules/@angular/material/esm5/expansion.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__search_search_component__ = __webpack_require__("./src/app/search/search.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__clients_clients_component__ = __webpack_require__("./src/app/clients/clients.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__meetings_meetings_component__ = __webpack_require__("./src/app/meetings/meetings.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__create_meeting_create_meeting_component__ = __webpack_require__("./src/app/create-meeting/create-meeting.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__angular_forms__ = __webpack_require__("./node_modules/@angular/forms/esm5/forms.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__create_meeting_second_chips_second_chips_component__ = __webpack_require__("./src/app/create-meeting/second-chips/second-chips.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__angular_material_datepicker__ = __webpack_require__("./node_modules/@angular/material/esm5/datepicker.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18_hammerjs__ = __webpack_require__("./node_modules/hammerjs/hammer.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18_hammerjs___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_18_hammerjs__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19_ngx_filter_pipe__ = __webpack_require__("./node_modules/ngx-filter-pipe/esm5/ngx-filter-pipe.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__add_client_add_client_component__ = __webpack_require__("./src/app/add-client/add-client.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__angular_material_select__ = __webpack_require__("./node_modules/@angular/material/esm5/select.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22_ngx_webstorage_service__ = __webpack_require__("./node_modules/ngx-webstorage-service/esm5/ngx-webstorage-service.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__angular_material_dialog__ = __webpack_require__("./node_modules/@angular/material/esm5/dialog.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__angular_common_http__ = __webpack_require__("./node_modules/@angular/common/esm5/http.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
+
+
+
 
 
 
@@ -175,11 +219,11 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 var appRoutes = [
     { path: '', component: __WEBPACK_IMPORTED_MODULE_5__login_login_component__["a" /* LoginComponent */] },
-    { path: 'task', component: __WEBPACK_IMPORTED_MODULE_7__task_task_component__["a" /* TaskComponent */] },
-    { path: 'clients', component: __WEBPACK_IMPORTED_MODULE_11__clients_clients_component__["a" /* ClientsComponent */] },
-    { path: 'meetings', component: __WEBPACK_IMPORTED_MODULE_12__meetings_meetings_component__["a" /* MeetingsComponent */] },
-    { path: 'meetings/create', component: __WEBPACK_IMPORTED_MODULE_13__create_meeting_create_meeting_component__["a" /* CreateMeetingComponent */] },
-    { path: 'client', component: __WEBPACK_IMPORTED_MODULE_19__add_client_add_client_component__["a" /* AddClientComponent */] }
+    { path: 'task', component: __WEBPACK_IMPORTED_MODULE_8__task_task_component__["a" /* TaskComponent */] },
+    { path: 'clients', component: __WEBPACK_IMPORTED_MODULE_12__clients_clients_component__["a" /* ClientsComponent */] },
+    { path: 'meetings', component: __WEBPACK_IMPORTED_MODULE_13__meetings_meetings_component__["a" /* MeetingsComponent */] },
+    { path: 'meetings/create', component: __WEBPACK_IMPORTED_MODULE_14__create_meeting_create_meeting_component__["a" /* CreateMeetingComponent */] },
+    { path: 'client', component: __WEBPACK_IMPORTED_MODULE_20__add_client_add_client_component__["a" /* AddClientComponent */] }
 ];
 var AppModule = /** @class */ (function () {
     function AppModule() {
@@ -189,33 +233,36 @@ var AppModule = /** @class */ (function () {
             declarations: [
                 __WEBPACK_IMPORTED_MODULE_4__app_component__["a" /* AppComponent */],
                 __WEBPACK_IMPORTED_MODULE_5__login_login_component__["a" /* LoginComponent */],
-                __WEBPACK_IMPORTED_MODULE_7__task_task_component__["a" /* TaskComponent */],
-                __WEBPACK_IMPORTED_MODULE_10__search_search_component__["a" /* SearchComponent */],
-                __WEBPACK_IMPORTED_MODULE_11__clients_clients_component__["a" /* ClientsComponent */],
-                __WEBPACK_IMPORTED_MODULE_12__meetings_meetings_component__["a" /* MeetingsComponent */],
-                __WEBPACK_IMPORTED_MODULE_13__create_meeting_create_meeting_component__["a" /* CreateMeetingComponent */],
-                __WEBPACK_IMPORTED_MODULE_15__create_meeting_second_chips_second_chips_component__["a" /* SecondChipsComponent */],
-                __WEBPACK_IMPORTED_MODULE_19__add_client_add_client_component__["a" /* AddClientComponent */]
+                __WEBPACK_IMPORTED_MODULE_8__task_task_component__["a" /* TaskComponent */],
+                __WEBPACK_IMPORTED_MODULE_11__search_search_component__["a" /* SearchComponent */],
+                __WEBPACK_IMPORTED_MODULE_12__clients_clients_component__["a" /* ClientsComponent */],
+                __WEBPACK_IMPORTED_MODULE_13__meetings_meetings_component__["a" /* MeetingsComponent */],
+                __WEBPACK_IMPORTED_MODULE_14__create_meeting_create_meeting_component__["a" /* CreateMeetingComponent */],
+                __WEBPACK_IMPORTED_MODULE_16__create_meeting_second_chips_second_chips_component__["a" /* SecondChipsComponent */],
+                __WEBPACK_IMPORTED_MODULE_20__add_client_add_client_component__["a" /* AddClientComponent */]
             ],
             imports: [
                 __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
+                __WEBPACK_IMPORTED_MODULE_24__angular_common_http__["b" /* HttpClientModule */],
+                __WEBPACK_IMPORTED_MODULE_22_ngx_webstorage_service__["b" /* StorageServiceModule */],
                 __WEBPACK_IMPORTED_MODULE_3__angular_platform_browser_animations__["a" /* BrowserAnimationsModule */],
-                __WEBPACK_IMPORTED_MODULE_6__angular_material__["c" /* MatFormFieldModule */],
-                __WEBPACK_IMPORTED_MODULE_6__angular_material__["e" /* MatInputModule */],
-                __WEBPACK_IMPORTED_MODULE_8__angular_material_sidenav__["a" /* MatSidenavModule */],
-                __WEBPACK_IMPORTED_MODULE_9__angular_material_expansion__["a" /* MatExpansionModule */],
-                __WEBPACK_IMPORTED_MODULE_6__angular_material__["b" /* MatChipsModule */],
-                __WEBPACK_IMPORTED_MODULE_6__angular_material__["d" /* MatIconModule */],
-                __WEBPACK_IMPORTED_MODULE_6__angular_material__["a" /* MatAutocompleteModule */],
-                __WEBPACK_IMPORTED_MODULE_14__angular_forms__["e" /* FormsModule */],
-                __WEBPACK_IMPORTED_MODULE_6__angular_material__["f" /* MatNativeDateModule */],
-                __WEBPACK_IMPORTED_MODULE_16__angular_material_datepicker__["a" /* MatDatepickerModule */],
-                __WEBPACK_IMPORTED_MODULE_20__angular_material_select__["a" /* MatSelectModule */],
-                __WEBPACK_IMPORTED_MODULE_14__angular_forms__["j" /* ReactiveFormsModule */],
-                __WEBPACK_IMPORTED_MODULE_18_ngx_filter_pipe__["a" /* FilterPipeModule */],
-                __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* RouterModule */].forRoot(appRoutes)
+                __WEBPACK_IMPORTED_MODULE_7__angular_material__["c" /* MatFormFieldModule */],
+                __WEBPACK_IMPORTED_MODULE_7__angular_material__["e" /* MatInputModule */],
+                __WEBPACK_IMPORTED_MODULE_9__angular_material_sidenav__["a" /* MatSidenavModule */],
+                __WEBPACK_IMPORTED_MODULE_10__angular_material_expansion__["a" /* MatExpansionModule */],
+                __WEBPACK_IMPORTED_MODULE_7__angular_material__["b" /* MatChipsModule */],
+                __WEBPACK_IMPORTED_MODULE_7__angular_material__["d" /* MatIconModule */],
+                __WEBPACK_IMPORTED_MODULE_7__angular_material__["a" /* MatAutocompleteModule */],
+                __WEBPACK_IMPORTED_MODULE_15__angular_forms__["e" /* FormsModule */],
+                __WEBPACK_IMPORTED_MODULE_7__angular_material__["f" /* MatNativeDateModule */],
+                __WEBPACK_IMPORTED_MODULE_17__angular_material_datepicker__["a" /* MatDatepickerModule */],
+                __WEBPACK_IMPORTED_MODULE_23__angular_material_dialog__["b" /* MatDialogModule */],
+                __WEBPACK_IMPORTED_MODULE_21__angular_material_select__["a" /* MatSelectModule */],
+                __WEBPACK_IMPORTED_MODULE_15__angular_forms__["j" /* ReactiveFormsModule */],
+                __WEBPACK_IMPORTED_MODULE_19_ngx_filter_pipe__["a" /* FilterPipeModule */],
+                __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* RouterModule */].forRoot(appRoutes)
             ],
-            providers: [],
+            providers: [__WEBPACK_IMPORTED_MODULE_6__services_data_service__["a" /* DataService */]],
             bootstrap: [__WEBPACK_IMPORTED_MODULE_4__app_component__["a" /* AppComponent */]]
         })
     ], AppModule);
@@ -229,14 +276,14 @@ var AppModule = /** @class */ (function () {
 /***/ "./src/app/clients/clients.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<h1 class=\"title-navbar\">Клієнти</h1>\n<app-search></app-search>\n<img class=\"add-client\" src=\"../../assets/img/add-client.png\" routerLink=\"/client\">\n<section class=\"clients\">\n  <div class=\"client\" *ngFor=\"let client of clients\">\n    <div>\n      <p class=\"client-name\">{{client.name}}</p>\n      <p class=\"client-number\">{{client.number}}</p>\n    </div>\n    <div class=\"settings\">\n      <img src=\"../../assets/img/settings.png\">\n    </div>\n  </div>\n</section>\n"
+module.exports = "<h1 class=\"title-navbar\">Клієнти</h1>\r\n  <div class=\"search-component\">\r\n  <input type=\"text\" placeholder=\"Пошук\" [(ngModel)]=\"userFilter.fullName\">\r\n</div>\r\n<img class=\"add-client\" src=\"../../assets/img/add-client.png\" routerLink=\"/client\">\r\n<section class=\"clients\">\r\n  <div class=\"client\" *ngFor=\"let client of clients | filterBy: userFilter\">\r\n    <div (click)=\"OpenClient(client)\">\r\n      <p class=\"client-name\">{{client.fullName}}</p>\r\n      <p class=\"client-number\">{{client.phone}} | {{client.bornDate | date:'dd.MM.yyyy'}} </p>\r\n    </div>\r\n    <div class=\"settings\">\r\n      <img src=\"../../assets/img/settings.png\">\r\n    </div>\r\n  </div>\r\n</section>\r\n"
 
 /***/ }),
 
 /***/ "./src/app/clients/clients.component.scss":
 /***/ (function(module, exports) {
 
-module.exports = ".clients {\n  background: white; }\n  .clients .client {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-orient: horizontal;\n    -webkit-box-direction: normal;\n        -ms-flex-direction: row;\n            flex-direction: row;\n    -webkit-box-pack: justify;\n        -ms-flex-pack: justify;\n            justify-content: space-between;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center;\n    padding: 18px 16px;\n    border-top: solid 1px #ededed; }\n  .clients .client .client-name {\n      font-size: 16px;\n      font-weight: 500;\n      font-style: normal;\n      font-stretch: normal;\n      line-height: 1.5;\n      letter-spacing: normal;\n      color: #000000;\n      margin: 0; }\n  .clients .client .client-number {\n      font-size: 14px;\n      font-weight: normal;\n      font-style: normal;\n      font-stretch: normal;\n      line-height: 1.71;\n      letter-spacing: normal;\n      color: #989898;\n      margin: 0; }\n  .clients .client .settings {\n      width: 37px;\n      height: 37px;\n      opacity: 0.2;\n      border-radius: 20px;\n      border: solid 1px #858585;\n      display: -webkit-box;\n      display: -ms-flexbox;\n      display: flex;\n      -webkit-box-orient: horizontal;\n      -webkit-box-direction: normal;\n          -ms-flex-direction: row;\n              flex-direction: row;\n      -webkit-box-pack: center;\n          -ms-flex-pack: center;\n              justify-content: center;\n      -webkit-box-align: center;\n          -ms-flex-align: center;\n              align-items: center; }\n  .clients .client:last-child {\n    border-bottom: solid 1px #ededed; }\n  .add-client {\n  position: absolute;\n  top: 14px;\n  left: 73px; }\n"
+module.exports = ".clients {\n  background: white; }\n  .clients .client {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-orient: horizontal;\n    -webkit-box-direction: normal;\n        -ms-flex-direction: row;\n            flex-direction: row;\n    -webkit-box-pack: justify;\n        -ms-flex-pack: justify;\n            justify-content: space-between;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center;\n    padding: 18px 16px;\n    border-top: solid 1px #ededed; }\n  .clients .client .client-name {\n      font-size: 16px;\n      font-weight: 500;\n      font-style: normal;\n      font-stretch: normal;\n      line-height: 1.5;\n      letter-spacing: normal;\n      color: #000000;\n      margin: 0; }\n  .clients .client .client-number {\n      font-size: 14px;\n      font-weight: normal;\n      font-style: normal;\n      font-stretch: normal;\n      line-height: 1.71;\n      letter-spacing: normal;\n      color: #989898;\n      margin: 0; }\n  .clients .client .settings {\n      width: 37px;\n      height: 37px;\n      opacity: 0.2;\n      border-radius: 20px;\n      border: solid 1px #858585;\n      display: -webkit-box;\n      display: -ms-flexbox;\n      display: flex;\n      -webkit-box-orient: horizontal;\n      -webkit-box-direction: normal;\n          -ms-flex-direction: row;\n              flex-direction: row;\n      -webkit-box-pack: center;\n          -ms-flex-pack: center;\n              justify-content: center;\n      -webkit-box-align: center;\n          -ms-flex-align: center;\n              align-items: center; }\n  .clients .client:last-child {\n    border-bottom: solid 1px #ededed; }\n"
 
 /***/ }),
 
@@ -246,6 +293,7 @@ module.exports = ".clients {\n  background: white; }\n  .clients .client {\n    
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ClientsComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_data_service__ = __webpack_require__("./src/app/services/data.service.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -256,24 +304,17 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+
 var ClientsComponent = /** @class */ (function () {
-    function ClientsComponent() {
-        this.clients = [
-            {
-                name: 'Сергієнко Іван Васильович',
-                number: '3806852145623   |   21.05.1994'
-            },
-            {
-                name: 'Сергієнко Іван Васильович',
-                number: '3806852145623   |   21.05.1994'
-            },
-            {
-                name: 'Сергієнко Іван Васильович',
-                number: '3806852145623   |   21.05.1994'
-            }
-        ];
+    function ClientsComponent(_data) {
+        this._data = _data;
+        this.clients = [];
+        this.userFilter = { fullName: '' };
     }
     ClientsComponent.prototype.ngOnInit = function () {
+        this.clients = this._data.clients;
+    };
+    ClientsComponent.prototype.OpenClient = function (client) {
     };
     ClientsComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
@@ -281,7 +322,7 @@ var ClientsComponent = /** @class */ (function () {
             template: __webpack_require__("./src/app/clients/clients.component.html"),
             styles: [__webpack_require__("./src/app/clients/clients.component.scss")]
         }),
-        __metadata("design:paramtypes", [])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__services_data_service__["a" /* DataService */]])
     ], ClientsComponent);
     return ClientsComponent;
 }());
@@ -293,14 +334,14 @@ var ClientsComponent = /** @class */ (function () {
 /***/ "./src/app/create-meeting/create-meeting.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<h1 class=\"title-navbar\">Зустріч</h1>\n<section class=\"create-meeting\">\n  <div class=\"create-meeting__header\">\n    <div>\n      <p class=\"bold\">05.02.2019</p>\n      <p class=\"normal\">Широта - 50.460718 </p>\n    </div>\n    <div>\n      <p class=\"bold right\">№3040</p>\n      <p class=\"normal right\">Довгота - 30.480146</p>\n    </div>\n  </div>\n  <mat-form-field class=\"example-full-width\">\n    <input style=\"margin-top: 5px\" matInput placeholder=\"Обрати клієнта\" aria-label=\"State\" [matAutocomplete]=\"auto\"\n           [(ngModel)]=\"nameItem\"\n           [formControl]=\"stateCtrl\" (blur)=\"onBlurMethod()\">\n    <div class=\"circle\" routerLink=\"/clients\">\n      <img src=\"../../assets/img/pen.png\">\n    </div>\n    <mat-autocomplete #auto=\"matAutocomplete\">\n      <mat-option *ngFor=\"let item of names  | filterBy: nameItem\" [value]=\"item\">\n        <span>{{ item }}</span>\n      </mat-option>\n    </mat-autocomplete>\n  </mat-form-field>\n\n  <mat-form-field class=\"example-full-width\">\n    <input matInput placeholder=\"Додати послугу\" aria-label=\"State\" [matAutocomplete]=\"spec\" [(ngModel)]=\"speciality\"\n           [formControl]=\"specialityCtrl\" (blur)=\"onBlurMethodSpeciality()\">\n    <div class=\"circle\">\n      <img src=\"../../assets/img/add.png\">\n    </div>\n    <mat-autocomplete #spec=\"matAutocomplete\">\n      <mat-option *ngFor=\"let item of specialitys  | filterBy: speciality\" [value]=\"item\">\n        <span>{{ item }}</span>\n      </mat-option>\n    </mat-autocomplete>\n  </mat-form-field>\n\n\n  <div class=\"action\">\n    <div class=\"action-div\" (click)=\"showDate || showFinal ? '' : showSms = true \">\n      <div>\n        <p class=\"name\">Послуга 1 пакету 1 проек…</p>\n        <p class=\"status\">нова</p>\n      </div>\n      <div class=\"close\">\n        <img src=\"../../assets/img/close-red.png\">\n      </div>\n    </div>\n    <div *ngIf=\"showSms\" class=\"sms-div\">\n      <div class=\"services\">\n        <p class=\"services__text\">Кількість послуг:</p>\n        <div class=\"count__container\">\n          <img class=\"minus\" (click)=\"decrement()\" src=\"../../assets/img/minus.png\">\n          <input class=\"count\" type=\"number\" [(ngModel)]=\"counter\">\n          <img class=\"plus\" (click)=\"increment()\" src=\"../../assets/img/plus.png\">\n        </div>\n      </div>\n      <input *ngIf=\"send\" type=\"text\" placeholder=\"Код з СМС\" [(ngModel)]=\"sms\">\n      <div *ngIf=\"send\">\n        <i class=\"fas fa-redo\" id=\"redo\"></i>\n        <a class=\"resend\">Надіслати повторно</a>\n      </div>\n      <button *ngIf=\"!send\" class=\"submit-sms\" (click)=\"send = true\">НАДІСЛАТИ СМС</button>\n      <button class=\"submit-sms\" *ngIf=\"send\" (click)=\"submit()\">Почати послугу</button>\n    </div>\n    <div class=\"date-div\" *ngIf=\"showDate\">\n      <div class=\"start\">\n        <input type=\"text\" placeholder=\"Початок\" [(ngModel)]=\"startTime\">\n      </div>\n      <div class=\"end\">\n        <input type=\"text\" placeholder=\"Кінець\" [(ngModel)]=\"endTime\">\n      </div>\n      <button class=\"finish\" (click)=\"finish()\">ЗАВЕРШИТИ</button>\n    </div>\n    <div class=\"final\" *ngIf=\"showFinal\">\n      <select>\n        <option disabled>Виберіть результат</option>\n        <option>2</option>\n        <option>3</option>\n        <option>4</option>\n      </select>\n    </div>\n  </div>\n\n  <div class=\"action\">\n    <div class=\"action-div\" (click)=\"showDate || showFinal ? '' : showSms = true \">\n      <div>\n        <p class=\"name\">Послуга 1 пакету 1 проек…</p>\n        <p class=\"status\">нова</p>\n      </div>\n      <div class=\"close\">\n        <img src=\"../../assets/img/close-red.png\">\n      </div>\n    </div>\n    <div *ngIf=\"showSms\" class=\"sms-div\">\n      <div class=\"services\">\n        <p class=\"services__text\">Кількість послуг:</p>\n        <div class=\"count__container\">\n          <img class=\"minus\" (click)=\"decrement()\" src=\"../../assets/img/minus.png\">\n          <input class=\"count\" type=\"number\" [(ngModel)]=\"counter\">\n          <img class=\"plus\" (click)=\"increment()\" src=\"../../assets/img/plus.png\">\n        </div>\n      </div>\n      <input *ngIf=\"send\" type=\"text\" placeholder=\"Код з СМС\" [(ngModel)]=\"sms\">\n      <div *ngIf=\"send\">\n        <i class=\"fas fa-redo\" id=\"redo\"></i>\n        <a class=\"resend\">Надіслати повторно</a>\n      </div>\n      <button *ngIf=\"!send\" class=\"submit-sms\" (click)=\"send = true\">НАДІСЛАТИ СМС</button>\n      <button class=\"submit-sms\" *ngIf=\"send\" (click)=\"submit()\">Почати послугу</button>\n    </div>\n    <div class=\"date-div\" *ngIf=\"showDate\">\n      <div class=\"start\">\n        <input type=\"text\" placeholder=\"Початок\" [(ngModel)]=\"startTime\">\n      </div>\n      <div class=\"end\">\n        <input type=\"text\" placeholder=\"Кінець\" [(ngModel)]=\"endTime\">\n      </div>\n      <button class=\"finish\" (click)=\"finish()\">ЗАВЕРШИТИ</button>\n    </div>\n    <div class=\"final\" *ngIf=\"showFinal\">\n      <select>\n        <option disabled>Виберіть результат</option>\n        <option>2</option>\n        <option>3</option>\n        <option>4</option>\n      </select>\n    </div>\n  </div>\n</section>\n"
+module.exports = "<h1 class=\"title-navbar\">Зустріч</h1>\r\n<section class=\"create-meeting\">\r\n  <div class=\"create-meeting__header\">\r\n    <div>\r\n      <p class=\"bold\"> {{appointment.date | date:'dd.MM.yyyy'}} </p>\r\n    </div>\r\n  </div>\r\n\r\n  <div class=\"container-for-icon\">\r\n    <mat-form-field>\r\n      <mat-select placeholder=\"Обрати клієнта\" [(ngModel)]=\"appointment.client\" [compareWith]=\"compareObjects\">\r\n        <mat-option *ngFor=\"let item of clients \" [value]=\"item\">\r\n          <span>{{ item.fullName }}</span>\r\n        </mat-option>\r\n      </mat-select>\r\n    </mat-form-field>\r\n    <div class=\"circle\" routerLink=\"/client\">\r\n      <img src=\"../../assets/img/pen.png\">\r\n    </div>\r\n  </div>\r\n  <div class=\"container-for-icon\">\r\n    <mat-form-field>\r\n      <mat-select placeholder=\"Додати послугу\" [disabled]=\"!appointment.client\">\r\n        <mat-option *ngFor=\"let item of  tasks\" [value]=\"item\" (click)=\"AddService($event,item)\">\r\n          <span>{{item.Name}}</span>\r\n        </mat-option>\r\n      </mat-select>\r\n    </mat-form-field>\r\n  </div>\r\n\r\n  <div class=\"action\" *ngFor=\"let aut of appointment.AppointmentUserTasks\">\r\n    <div class=\"action-div\">\r\n      <div>\r\n        <p class=\"name\">{{aut.userTask.Name}}</p>\r\n        <p class=\"status\">{{ getStateNameByCode(aut.state.Code)}}</p>\r\n      </div>\r\n      <div class=\"close\" (click)=\"deleteService(service)\">\r\n        <img src=\"../../assets/img/close-red.png\">\r\n      </div>\r\n    </div>\r\n    <div class=\"sms-div\">\r\n      <div class=\"services\">\r\n        <p class=\"services__text\">Кількість послуг:</p>\r\n        <div class=\"count__container\">\r\n          <img class=\"minus\" (click)=\"decrement(aut)\" src=\"../../assets/img/minus.png\">\r\n          <input class=\"count\" type=\"number\" readonly [(ngModel)]=\"aut.count\">\r\n          <img class=\"plus\" (click)=\"increment(aut)\" src=\"../../assets/img/plus.png\">\r\n        </div>\r\n      </div>\r\n    </div>\r\n    <div class=\"date-div\" *ngIf=\"aut.state.Code=='started'||aut.state.Code=='finished'\">\r\n      <button class=\"finish\" *ngIf=\"aut.state.Code=='started'\" (click)=\"finishService(aut)\">ЗАВЕРШИТИ</button>\r\n    </div>\r\n    <div class=\"final\" *ngIf=\"aut.state.Code=='finished'\">\r\n      <select>\r\n        <option disabled>Виберіть результат</option>\r\n        <option>Успішно</option>\r\n        <option>Перервано</option>\r\n        <option>Перенесено</option>\r\n      </select>\r\n    </div>\r\n  </div>\r\n\r\n\r\n  <button *ngIf=\"appointment.state.Code=='new'\" class=\"create-btn\" (click)=\"startAppointment()\"\r\n          [disabled]=\"checkData() || !appointment.client\">\r\n    ПОЧАТИ ЗУСТРІЧ\r\n  </button>\r\n\r\n\r\n  <mat-form-field *ngIf=\"appointment.state.Code=='send'\">\r\n    <input matInput  type=\"number\" placeholder=\"Код з СМС\" class=\"sms-input\" [(ngModel)]=\"smsCode\">\r\n  </mat-form-field>\r\n  <button *ngIf=\"appointment.state.Code=='send'\" class=\"submit-sms create-btn\" (click)=\"verifyClient(smsCode)\">Ок</button>\r\n  <div *ngIf=\"appointment.state.Code=='send'\" class=\"redo-div\">\r\n    <i class=\"fas fa-redo\" id=\"redo\"></i>\r\n    <a class=\"resend\">Надіслати повторно</a>\r\n  </div>\r\n\r\n\r\n  <button *ngIf=\"appointment.state.Code=='started'\" class=\"create-btn\" (click)=\"finishAppointment()\"\r\n          routerLink=\"/meetings\" [disabled]=\"checkData()\">\r\n    ЗАВЕРШИТИ ЗУСТРІЧ\r\n  </button>\r\n\r\n</section>\r\n"
 
 /***/ }),
 
 /***/ "./src/app/create-meeting/create-meeting.component.scss":
 /***/ (function(module, exports) {
 
-module.exports = ".create-meeting {\n  padding: 0 17px;\n  background: white; }\n  .create-meeting ::ng-deep .mat-form-field-underline, .create-meeting ::ng-deep .mat-form-field-ripple {\n    background-color: #989898 !important; }\n  .create-meeting ::ng-deep .mat-form-field-label, .create-meeting ::ng-deep .mat-focused {\n    color: #989898 !important; }\n  .create-meeting ::ng-deep .mat-input-element {\n    caret-color: #989898;\n    color: #989898; }\n  .create-meeting .mat-form-field {\n    width: 100%;\n    margin-top: 10px; }\n  .create-meeting .create-meeting__header {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-orient: horizontal;\n    -webkit-box-direction: normal;\n        -ms-flex-direction: row;\n            flex-direction: row;\n    -webkit-box-pack: justify;\n        -ms-flex-pack: justify;\n            justify-content: space-between;\n    padding-top: 14px;\n    padding-bottom: 14px; }\n  .create-meeting .create-meeting__header div .bold {\n      margin: 0;\n      font-size: 18px;\n      font-weight: 500;\n      font-style: normal;\n      font-stretch: normal;\n      line-height: normal;\n      letter-spacing: normal;\n      color: #000000; }\n  .create-meeting .create-meeting__header div .normal {\n      margin-bottom: 0;\n      margin-top: 7px;\n      font-size: 14px;\n      font-weight: normal;\n      font-style: normal;\n      font-stretch: normal;\n      line-height: normal;\n      letter-spacing: normal;\n      color: #989898; }\n  .create-meeting .create-meeting__header div .bold.right, .create-meeting .create-meeting__header div .normal.right {\n      text-align: right; }\n  .create-meeting .example-full-width .circle {\n    width: 36px;\n    height: 36px;\n    border-radius: 25px;\n    -webkit-box-shadow: 0 2px 4px 0 rgba(0, 122, 255, 0.28);\n            box-shadow: 0 2px 4px 0 rgba(0, 122, 255, 0.28);\n    background-color: #2c93f3;\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-orient: horizontal;\n    -webkit-box-direction: normal;\n        -ms-flex-direction: row;\n            flex-direction: row;\n    -webkit-box-pack: center;\n        -ms-flex-pack: center;\n            justify-content: center;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center;\n    margin-left: auto;\n    position: absolute;\n    right: 0;\n    top: -8px; }\n  .create-meeting .start, .create-meeting .end {\n    margin: 11px 0; }\n  .action {\n  background-color: #f2f4f7;\n  padding: 11px 15px;\n  margin-top: 11px; }\n  .action .action-div {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-orient: horizontal;\n    -webkit-box-direction: normal;\n        -ms-flex-direction: row;\n            flex-direction: row;\n    -webkit-box-pack: justify;\n        -ms-flex-pack: justify;\n            justify-content: space-between;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center;\n    border-radius: 2px; }\n  .action .action-div div .name {\n      font-size: 16px;\n      font-weight: 500;\n      font-style: normal;\n      font-stretch: normal;\n      line-height: normal;\n      letter-spacing: normal;\n      color: #000000;\n      margin: 0; }\n  .action .action-div div .status {\n      font-size: 14px;\n      font-weight: normal;\n      font-style: normal;\n      font-stretch: normal;\n      line-height: normal;\n      letter-spacing: normal;\n      color: #43b65c;\n      margin: 0; }\n  .action .action-div .close {\n      width: 36px;\n      height: 36px;\n      border-radius: 20px;\n      background-color: #ffffff;\n      display: -webkit-box;\n      display: -ms-flexbox;\n      display: flex;\n      -webkit-box-orient: horizontal;\n      -webkit-box-direction: normal;\n          -ms-flex-direction: row;\n              flex-direction: row;\n      -webkit-box-pack: center;\n          -ms-flex-pack: center;\n              justify-content: center;\n      -webkit-box-align: center;\n          -ms-flex-align: center;\n              align-items: center; }\n  .action .sms-div {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-orient: horizontal;\n    -webkit-box-direction: normal;\n        -ms-flex-direction: row;\n            flex-direction: row;\n    -webkit-box-pack: justify;\n        -ms-flex-pack: justify;\n            justify-content: space-between;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center;\n    -ms-flex-wrap: wrap;\n        flex-wrap: wrap; }\n  .action .sms-div input {\n      width: 100%;\n      height: 40px;\n      border-radius: 2px;\n      -webkit-box-shadow: 0 2px 4px 0 rgba(213, 213, 213, 0.28);\n              box-shadow: 0 2px 4px 0 rgba(213, 213, 213, 0.28);\n      background-color: #ffffff;\n      font-size: 16px;\n      font-weight: normal;\n      font-style: normal;\n      font-stretch: normal;\n      line-height: normal;\n      letter-spacing: normal;\n      color: #989898;\n      border: 0;\n      -webkit-box-sizing: border-box;\n              box-sizing: border-box;\n      margin-top: 7px;\n      padding: 10px 14px; }\n  .action .sms-div .submit-sms {\n      margin-top: 10px;\n      width: 100%;\n      height: 40px;\n      border-radius: 2px;\n      background-color: #2c93f3;\n      font-size: 16px;\n      font-weight: normal;\n      font-style: normal;\n      font-stretch: normal;\n      line-height: normal;\n      letter-spacing: normal;\n      color: #ffffff;\n      border: 0; }\n  .action .date-div {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-orient: horizontal;\n    -webkit-box-direction: normal;\n        -ms-flex-direction: row;\n            flex-direction: row;\n    -webkit-box-pack: justify;\n        -ms-flex-pack: justify;\n            justify-content: space-between;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center;\n    -ms-flex-wrap: wrap;\n        flex-wrap: wrap;\n    margin-top: 7px; }\n  .action .date-div .start input, .action .date-div .end input {\n      width: 153px;\n      height: 40px;\n      border-radius: 2px;\n      -webkit-box-shadow: 0 2px 4px 0 rgba(213, 213, 213, 0.28);\n              box-shadow: 0 2px 4px 0 rgba(213, 213, 213, 0.28);\n      border: solid 1px #d2dadd;\n      background-color: #ffffff;\n      padding-left: 42px;\n      -webkit-box-sizing: border-box;\n              box-sizing: border-box;\n      background: url(\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABMAAAAUCAYAAABvVQZ0AAAAAXNSR0IArs4c6QAAAQRJREFUOBHtVDsOgzAMdQJDJebCAVg4ATNzJe7QI3Rg6Qm69gg9A58LMCIuQrqyQpoXCQRRaRXUsZaIsf38YjmWGS2kKIobY+wipbynaXpdhFa/Wzi+QhFlSZIclC8z/Kb5FueqW06c88cwDEdVEXmeR0q7eZ5Lk2GyTZzjOM9xHM9UVZXouk7FpSzLUvZ9r7V2bBwmDvng4ajI9319aRiGVNc1QX8SE4d88LjLpCiKCN832cLNZE3TkCqXgiCgOI7J1kYB82uCSI2DJkTA1l6RoSL1sroyBGxt5BBG4BcCnn/P7Dr575ldv4BGzzh2kRBCD/DeA/ngcbHU2rbVy3Ev2bQcXxfIK3PuIBO9AAAAAElFTkSuQmCC\") no-repeat scroll 12px 11px; }\n  .action .date-div .finish {\n      width: 100%;\n      height: 40px;\n      border-radius: 2px;\n      background-color: #2c93f3;\n      border: 0;\n      font-size: 16px;\n      font-weight: normal;\n      font-style: normal;\n      font-stretch: normal;\n      line-height: normal;\n      letter-spacing: normal;\n      color: #ffffff;\n      margin-top: 10px; }\n  .action .final select {\n    width: 100%;\n    height: 45px;\n    border-radius: 2px;\n    -webkit-box-shadow: 0 2px 4px 0 rgba(213, 213, 213, 0.28);\n            box-shadow: 0 2px 4px 0 rgba(213, 213, 213, 0.28);\n    border: solid 1px #d2dadd;\n    background-color: #ffffff;\n    padding: 12px; }\n  .services {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: row;\n          flex-direction: row;\n  -webkit-box-pack: justify;\n      -ms-flex-pack: justify;\n          justify-content: space-between;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  width: 100%; }\n  .services .services__text {\n    font-size: 16px;\n    font-weight: normal;\n    font-style: normal;\n    font-stretch: condensed;\n    line-height: normal;\n    letter-spacing: normal;\n    color: #000000; }\n  .services .count__container {\n    position: relative; }\n  .services .count__container .count {\n      width: 144px;\n      height: 40px;\n      border-radius: 2px;\n      -webkit-box-shadow: 0 2px 4px 0 rgba(213, 213, 213, 0.28);\n              box-shadow: 0 2px 4px 0 rgba(213, 213, 213, 0.28);\n      border: solid 1px #d2dadd;\n      background-color: #ffffff;\n      text-align: center; }\n  .services .count__container .minus, .services .count__container .plus {\n      position: absolute;\n      top: 14px; }\n  .services .count__container .minus {\n      left: 10px; }\n  .services .count__container .plus {\n      right: 10px; }\n  #redo {\n  color: #2c93f3;\n  margin-top: 5px; }\n  .resend {\n  color: #2c93f3; }\n"
+module.exports = ".create-meeting {\n  padding: 0 17px;\n  background: white; }\n  .create-meeting ::ng-deep .mat-form-field-underline, .create-meeting ::ng-deep .mat-form-field-ripple {\n    background-color: #989898 !important; }\n  .create-meeting ::ng-deep .mat-form-field-label, .create-meeting ::ng-deep .mat-focused {\n    color: #989898 !important; }\n  .create-meeting ::ng-deep .mat-input-element {\n    caret-color: #989898;\n    color: #989898; }\n  .create-meeting .mat-form-field {\n    width: 100%;\n    margin-top: 10px; }\n  .create-meeting .create-meeting__header {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-orient: horizontal;\n    -webkit-box-direction: normal;\n        -ms-flex-direction: row;\n            flex-direction: row;\n    -webkit-box-pack: center;\n        -ms-flex-pack: center;\n            justify-content: center;\n    padding-top: 14px;\n    padding-bottom: 14px; }\n  .create-meeting .create-meeting__header div .bold {\n      margin: 0;\n      font-size: 18px;\n      font-weight: 500;\n      font-style: normal;\n      font-stretch: normal;\n      line-height: normal;\n      letter-spacing: normal;\n      color: #000000; }\n  .create-meeting .create-meeting__header div .normal {\n      margin-bottom: 0;\n      margin-top: 7px;\n      font-size: 14px;\n      font-weight: normal;\n      font-style: normal;\n      font-stretch: normal;\n      line-height: normal;\n      letter-spacing: normal;\n      color: #989898; }\n  .create-meeting .create-meeting__header div .bold.right, .create-meeting .create-meeting__header div .normal.right {\n      text-align: right; }\n  .create-meeting .container-for-icon {\n    position: relative; }\n  .create-meeting .container-for-icon .circle {\n      width: 36px;\n      height: 36px;\n      border-radius: 25px;\n      -webkit-box-shadow: 0 2px 4px 0 rgba(0, 122, 255, 0.28);\n              box-shadow: 0 2px 4px 0 rgba(0, 122, 255, 0.28);\n      background-color: #bdbdbd;\n      display: -webkit-box;\n      display: -ms-flexbox;\n      display: flex;\n      -webkit-box-orient: horizontal;\n      -webkit-box-direction: normal;\n          -ms-flex-direction: row;\n              flex-direction: row;\n      -webkit-box-pack: center;\n          -ms-flex-pack: center;\n              justify-content: center;\n      -webkit-box-align: center;\n          -ms-flex-align: center;\n              align-items: center;\n      margin-left: auto;\n      position: absolute;\n      right: 0;\n      top: 15px; }\n  .create-meeting .start, .create-meeting .end {\n    margin: 11px 0; }\n  .create-meeting .create-btn {\n    max-width: 341px;\n    height: 44px;\n    width: 100%;\n    border-radius: 2px;\n    font-size: 18px;\n    font-weight: 500;\n    font-style: normal;\n    font-stretch: normal;\n    line-height: normal;\n    letter-spacing: normal;\n    text-align: center;\n    color: #ffffff;\n    background: #bdbdbd;\n    border: 0;\n    margin-top: 26px; }\n  .action {\n  background-color: #f2f4f7;\n  padding: 11px 15px;\n  margin-top: 11px; }\n  .action .action-div {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-orient: horizontal;\n    -webkit-box-direction: normal;\n        -ms-flex-direction: row;\n            flex-direction: row;\n    -webkit-box-pack: justify;\n        -ms-flex-pack: justify;\n            justify-content: space-between;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center;\n    border-radius: 2px; }\n  .action .action-div div .name {\n      font-size: 16px;\n      font-weight: 500;\n      font-style: normal;\n      font-stretch: normal;\n      line-height: normal;\n      letter-spacing: normal;\n      color: #000000;\n      margin: 0; }\n  .action .action-div div .status {\n      font-size: 14px;\n      font-weight: normal;\n      font-style: normal;\n      font-stretch: normal;\n      line-height: normal;\n      letter-spacing: normal;\n      color: #43b65c;\n      margin: 0; }\n  .action .action-div .close {\n      width: 36px;\n      height: 36px;\n      border-radius: 20px;\n      background-color: #ffffff;\n      display: -webkit-box;\n      display: -ms-flexbox;\n      display: flex;\n      -webkit-box-orient: horizontal;\n      -webkit-box-direction: normal;\n          -ms-flex-direction: row;\n              flex-direction: row;\n      -webkit-box-pack: center;\n          -ms-flex-pack: center;\n              justify-content: center;\n      -webkit-box-align: center;\n          -ms-flex-align: center;\n              align-items: center; }\n  .action .sms-div {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-orient: horizontal;\n    -webkit-box-direction: normal;\n        -ms-flex-direction: row;\n            flex-direction: row;\n    -webkit-box-pack: justify;\n        -ms-flex-pack: justify;\n            justify-content: space-between;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center;\n    -ms-flex-wrap: wrap;\n        flex-wrap: wrap; }\n  .action .sms-div input {\n      width: 100%;\n      height: 40px;\n      border-radius: 2px;\n      -webkit-box-shadow: 0 2px 4px 0 rgba(213, 213, 213, 0.28);\n              box-shadow: 0 2px 4px 0 rgba(213, 213, 213, 0.28);\n      background-color: #ffffff;\n      font-size: 16px;\n      font-weight: normal;\n      font-style: normal;\n      font-stretch: normal;\n      line-height: normal;\n      letter-spacing: normal;\n      color: #989898;\n      border: 0;\n      -webkit-box-sizing: border-box;\n              box-sizing: border-box;\n      margin-top: 7px;\n      padding: 10px 14px; }\n  .action .sms-div .submit-sms {\n      margin-top: 10px;\n      width: 100%;\n      height: 40px;\n      border-radius: 2px;\n      background-color: #bdbdbd;\n      font-size: 16px;\n      font-weight: normal;\n      font-style: normal;\n      font-stretch: normal;\n      line-height: normal;\n      letter-spacing: normal;\n      color: #ffffff;\n      border: 0; }\n  .action .date-div {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-orient: horizontal;\n    -webkit-box-direction: normal;\n        -ms-flex-direction: row;\n            flex-direction: row;\n    -webkit-box-pack: justify;\n        -ms-flex-pack: justify;\n            justify-content: space-between;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center;\n    -ms-flex-wrap: wrap;\n        flex-wrap: wrap;\n    margin-top: 7px; }\n  .action .date-div .start, .action .date-div .end {\n      width: 50%; }\n  .action .date-div .start input, .action .date-div .end input {\n        width: 115px;\n        height: 40px;\n        border-radius: 2px;\n        -webkit-box-shadow: 0 2px 4px 0 rgba(213, 213, 213, 0.28);\n                box-shadow: 0 2px 4px 0 rgba(213, 213, 213, 0.28);\n        border: solid 1px #d2dadd;\n        background-color: #ffffff;\n        padding-left: 42px;\n        -webkit-box-sizing: border-box;\n                box-sizing: border-box;\n        background: url(\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABMAAAAUCAYAAABvVQZ0AAAAAXNSR0IArs4c6QAAAQRJREFUOBHtVDsOgzAMdQJDJebCAVg4ATNzJe7QI3Rg6Qm69gg9A58LMCIuQrqyQpoXCQRRaRXUsZaIsf38YjmWGS2kKIobY+wipbynaXpdhFa/Wzi+QhFlSZIclC8z/Kb5FueqW06c88cwDEdVEXmeR0q7eZ5Lk2GyTZzjOM9xHM9UVZXouk7FpSzLUvZ9r7V2bBwmDvng4ajI9319aRiGVNc1QX8SE4d88LjLpCiKCN832cLNZE3TkCqXgiCgOI7J1kYB82uCSI2DJkTA1l6RoSL1sroyBGxt5BBG4BcCnn/P7Dr575ldv4BGzzh2kRBCD/DeA/ngcbHU2rbVy3Ev2bQcXxfIK3PuIBO9AAAAAElFTkSuQmCC\") no-repeat scroll 12px 11px; }\n  .action .date-div .finish {\n      width: 100%;\n      height: 40px;\n      border-radius: 2px;\n      background-color: #bdbdbd;\n      border: 0;\n      font-size: 16px;\n      font-weight: normal;\n      font-style: normal;\n      font-stretch: normal;\n      line-height: normal;\n      letter-spacing: normal;\n      color: #ffffff;\n      margin-top: 10px; }\n  .action .final select {\n    width: 100%;\n    height: 45px;\n    border-radius: 2px;\n    -webkit-box-shadow: 0 2px 4px 0 rgba(213, 213, 213, 0.28);\n            box-shadow: 0 2px 4px 0 rgba(213, 213, 213, 0.28);\n    border: solid 1px #d2dadd;\n    background-color: #ffffff;\n    padding: 12px; }\n  .services {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: row;\n          flex-direction: row;\n  -webkit-box-pack: justify;\n      -ms-flex-pack: justify;\n          justify-content: space-between;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  width: 100%; }\n  .services .services__text {\n    font-size: 16px;\n    font-weight: normal;\n    font-style: normal;\n    font-stretch: condensed;\n    line-height: normal;\n    letter-spacing: normal;\n    color: #000000; }\n  .services .count__container {\n    position: relative; }\n  .services .count__container .count {\n      outline: none;\n      width: 144px;\n      height: 40px;\n      border-radius: 2px;\n      -webkit-box-shadow: 0 2px 4px 0 rgba(213, 213, 213, 0.28);\n              box-shadow: 0 2px 4px 0 rgba(213, 213, 213, 0.28);\n      border: solid 1px #d2dadd;\n      background-color: #ffffff;\n      text-align: center; }\n  .services .count__container .minus, .services .count__container .plus {\n      position: absolute;\n      top: 14px; }\n  .services .count__container .minus {\n      left: 10px; }\n  .services .count__container .plus {\n      right: 10px; }\n  #redo {\n  color: #bdbdbd;\n  margin-top: 5px; }\n  .resend {\n  color: #bdbdbd; }\n  .redo-div {\n  padding-top: 10px; }\n"
 
 /***/ }),
 
@@ -311,6 +352,7 @@ module.exports = ".create-meeting {\n  padding: 0 17px;\n  background: white; }\
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CreateMeetingComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_forms__ = __webpack_require__("./node_modules/@angular/forms/esm5/forms.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_data_service__ = __webpack_require__("./src/app/services/data.service.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -322,67 +364,76 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
+
 var CreateMeetingComponent = /** @class */ (function () {
-    function CreateMeetingComponent() {
-        this.showSms = true;
-        this.showDate = false;
-        this.showFinal = false;
-        this.sms = '';
-        this.nameItem = '';
-        this.speciality = '';
-        this.send = false;
-        this.counter = 1;
-        this.names = [
-            'Иван', 'Алекс', 'Настя'
-        ];
-        this.specialitys = [
-            'Послуга 1', 'Послуга 2'
-        ];
-        this.startTime = new Date().toLocaleTimeString('en-US', {
-            hour12: false,
-            hour: 'numeric',
-            minute: 'numeric'
-        });
-        this.endTime = '';
+    function CreateMeetingComponent(_data) {
+        this._data = _data;
+        this.selectedItem = '';
         this.stateCtrl = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]();
         this.specialityCtrl = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]();
     }
-    CreateMeetingComponent.prototype.submit = function () {
-        this.showDate = true;
-        this.showSms = false;
+    CreateMeetingComponent.prototype.decrement = function (service) {
+        if (service.count > 1) {
+            service.count--;
+        }
     };
-    CreateMeetingComponent.prototype.finish = function () {
-        // this.showDate = false;
-        //     //     // this.showFinal = true;
-        this.endTime = new Date().toLocaleTimeString('en-US', {
-            hour12: false,
-            hour: 'numeric',
-            minute: 'numeric'
+    CreateMeetingComponent.prototype.increment = function (service) {
+        service.count++;
+    };
+    CreateMeetingComponent.prototype.ngOnInit = function () {
+        console.log('init');
+        this.appointment = this._data.getCurrentAppointment();
+        this.tasks = this._data.tasks;
+        this.clients = this._data.clients;
+    };
+    CreateMeetingComponent.prototype.AddService = function (event, userTask) {
+        console.log(this.selectedItem);
+        console.log(this.tasks);
+        console.log(userTask);
+        for (var i = 0; i < this.tasks.length; i++) {
+            if (this.tasks[i].Name === userTask.Name) {
+                this.tasks.splice(i, 1);
+            }
+        }
+        event.stopPropagation();
+        this.appointment.AppointmentUserTasks.push({
+            userTask: userTask,
+            startTime: new Date(),
+            count: 1,
+            state: this._data.taskStates.find(function (x) { return x.Code === 'new'; })
         });
+        this.SaveAppointment();
+        userTask = undefined;
     };
-    CreateMeetingComponent.prototype.onBlurMethod = function () {
-        if (this.names.includes(this.nameItem)) {
-            return;
-        }
-        else {
-            this.nameItem = '';
-        }
+    CreateMeetingComponent.prototype.deleteService = function (pservice) {
+        this.appointment.AppointmentUserTasks.splice(pservice, 1);
     };
-    CreateMeetingComponent.prototype.onBlurMethodSpeciality = function () {
-        if (this.specialitys.includes(this.speciality)) {
-            return;
-        }
-        else {
-            this.speciality = '';
-        }
+    CreateMeetingComponent.prototype.compareObjects = function (o1, o2) {
+        return o1.id === o2.id;
     };
-    CreateMeetingComponent.prototype.decrement = function () {
-        if (this.counter > 1) {
-            this.counter--;
+    CreateMeetingComponent.prototype.getStateNameByCode = function (code) {
+        var res = '';
+        var m = this._data.taskStates.find(function (x) { return x.Code === code; });
+        if (m) {
+            res = m.Name;
         }
+        return res;
     };
-    CreateMeetingComponent.prototype.increment = function () {
-        this.counter++;
+    CreateMeetingComponent.prototype.SaveAppointment = function () {
+        this.appointment.number = this._data.SaveAppointment(this.appointment).number;
+    };
+    CreateMeetingComponent.prototype.checkData = function () {
+        this.appointment.client && this.appointment.AppointmentUserTasks.length > 0;
+    };
+    CreateMeetingComponent.prototype.startAppointment = function () {
+        this.appointment.state = this._data.appointmentStaes.find(function (x) { return x.Code === 'send'; });
+    };
+    CreateMeetingComponent.prototype.verifyClient = function () {
+        this.appointment.state = this._data.appointmentStaes.find(function (x) { return x.Code === 'started'; });
+    };
+    CreateMeetingComponent.prototype.finishAppointment = function () {
+        this.appointment.state = this._data.appointmentStaes.find(function (x) { return x.Code === 'closed'; });
+        this.SaveAppointment();
     };
     CreateMeetingComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
@@ -390,7 +441,7 @@ var CreateMeetingComponent = /** @class */ (function () {
             template: __webpack_require__("./src/app/create-meeting/create-meeting.component.html"),
             styles: [__webpack_require__("./src/app/create-meeting/create-meeting.component.scss")]
         }),
-        __metadata("design:paramtypes", [])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2__services_data_service__["a" /* DataService */]])
     ], CreateMeetingComponent);
     return CreateMeetingComponent;
 }());
@@ -402,7 +453,7 @@ var CreateMeetingComponent = /** @class */ (function () {
 /***/ "./src/app/create-meeting/second-chips/second-chips.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<mat-form-field class=\"demo-chip-list\">\n  <mat-chip-list #chipList>\n    <mat-chip *ngFor=\"let fruit of fruits\" [selectable]=\"selectable\"\n              [removable]=\"removable\" (remove)=\"remove(fruit)\">\n      {{fruit.name}}\n      <mat-icon matChipRemove *ngIf=\"removable\">cancel</mat-icon>\n    </mat-chip>\n    <input placeholder=\"Додати послугу\"\n           [matChipInputFor]=\"chipList\"\n           [matChipInputSeparatorKeyCodes]=\"separatorKeysCodes\"\n           [matChipInputAddOnBlur]=\"addOnBlur\"\n           (matChipInputTokenEnd)=\"add($event)\" />\n  </mat-chip-list>\n</mat-form-field>\n"
+module.exports = "<mat-form-field class=\"demo-chip-list\">\r\n  <mat-chip-list #chipList>\r\n    <mat-chip *ngFor=\"let fruit of fruits\" [selectable]=\"selectable\"\r\n              [removable]=\"removable\" (remove)=\"remove(fruit)\">\r\n      {{fruit.name}}\r\n      <mat-icon matChipRemove *ngIf=\"removable\">cancel</mat-icon>\r\n    </mat-chip>\r\n    <input placeholder=\"Додати послугу\"\r\n           [matChipInputFor]=\"chipList\"\r\n           [matChipInputSeparatorKeyCodes]=\"separatorKeysCodes\"\r\n           [matChipInputAddOnBlur]=\"addOnBlur\"\r\n           (matChipInputTokenEnd)=\"add($event)\" />\r\n  </mat-chip-list>\r\n</mat-form-field>\r\n"
 
 /***/ }),
 
@@ -477,14 +528,14 @@ var SecondChipsComponent = /** @class */ (function () {
 /***/ "./src/app/login/login.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<section class=\"login\">\n  <img class=\"login__image\" src=\"../../assets/img/logo.png\">\n  <h1 class=\"title\">Авторизація</h1>\n  <form class=\"form\" [formGroup]=\"myForm\">\n    <mat-form-field>\n      <input matInput formControlName=\"email\" placeholder=\"Email\" type=\"text\">\n    </mat-form-field>\n    <mat-form-field class=\"password\">\n      <img class=\"eye\" src=\"../../assets/img/eye.png\"  (click)=\"password()\">\n      <input matInput formControlName=\"password\" placeholder=\"Введите пароль\" [type]=\"show ? 'text' : 'password'\">\n    </mat-form-field>\n    <button type=\"submit\"  routerLink=\"/task\">\n      УВІЙТИ\n    </button>\n  </form>\n  <p class=\"footer-text\">\"Всеукраинская сеть ЛЖВ\"</p>\n</section>\n"
+module.exports = "<section class=\"login\">\r\n  <img class=\"login__image\" src=\"../../assets/img/logo.png\">\r\n  <h1 class=\"title\">Авторизація</h1>\r\n  <form class=\"form\" [formGroup]=\"myForm\">\r\n    <mat-form-field>\r\n      <input matInput formControlName=\"email\" placeholder=\"Email\" type=\"text\">\r\n    </mat-form-field>\r\n    <mat-form-field class=\"password\">\r\n      <img class=\"eye\" src=\"../../assets/img/eye.png\"  (click)=\"password()\">\r\n      <input matInput formControlName=\"password\" placeholder=\"Введите пароль\" [type]=\"show ? 'text' : 'password'\">\r\n    </mat-form-field>\r\n    <mat-error *ngIf=\"!isValid\">\r\n      E-mail або пароль невірні\r\n    </mat-error>\r\n    <button type=\"submit\" (click)=\"checkForm()\">\r\n      УВІЙТИ\r\n    </button>\r\n  </form>\r\n  <p class=\"footer-text\">\"Всеукраинская сеть ЛЖВ\"</p>\r\n</section>\r\n"
 
 /***/ }),
 
 /***/ "./src/app/login/login.component.scss":
 /***/ (function(module, exports) {
 
-module.exports = ".login {\n  background-color: #202226;\n  height: 100vh;\n  position: absolute;\n  top: 0;\n  left: 0;\n  right: 0;\n  z-index: 3; }\n  .login ::ng-deep .mat-form-field-underline, .login ::ng-deep .mat-form-field-ripple {\n    background-color: #979797 !important; }\n  .login ::ng-deep .mat-form-field-label, .login ::ng-deep .mat-focused {\n    color: #979797 !important; }\n  .login ::ng-deep .mat-input-element {\n    caret-color: #979797;\n    color: #979797; }\n  .login .login__image {\n    margin: 0 auto;\n    width: 100px;\n    height: 100px;\n    display: block;\n    padding-top: 37px; }\n  .login .title {\n    font-size: 24px;\n    font-weight: bold;\n    font-style: normal;\n    font-stretch: condensed;\n    line-height: 1;\n    letter-spacing: normal;\n    text-align: center;\n    color: #ffffff;\n    font-family: \"Roboto\", sans-serif;\n    text-transform: uppercase; }\n  .login .form {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-orient: vertical;\n    -webkit-box-direction: normal;\n        -ms-flex-direction: column;\n            flex-direction: column;\n    -webkit-box-pack: center;\n        -ms-flex-pack: center;\n            justify-content: center;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center;\n    position: absolute;\n    left: 50%;\n    top: 60%;\n    -webkit-transform: translate(-50%, -50%);\n            transform: translate(-50%, -50%); }\n  .login .mat-focused .mat-form-field-label {\n    color: #979797 !important; }\n  .login .mat-form-field-ripple {\n    background-color: #979797 !important; }\n  .login .mat-input-element {\n    caret-color: #979797 !important; }\n  .login .mat-form-field-ripple {\n    background: #979797 !important; }\n  .login button {\n    width: 300px;\n    height: 50px;\n    border-radius: 2px;\n    -webkit-box-shadow: 0 2px 4px 0 rgba(0, 122, 255, 0.28);\n            box-shadow: 0 2px 4px 0 rgba(0, 122, 255, 0.28);\n    background-color: #2c93f3;\n    color: white;\n    font-weight: bold;\n    margin-top: 92px;\n    border: 0; }\n  .login .footer-text {\n    position: absolute;\n    bottom: 31px;\n    text-align: center;\n    color: #989898;\n    font-size: 14px;\n    left: 0;\n    right: 0; }\n  .login mat-form-field {\n    max-width: 375px;\n    width: 90%; }\n  .login .password {\n    position: relative; }\n  .login .password .eye {\n      position: absolute;\n      width: 27px;\n      height: 18px;\n      -o-object-fit: contain;\n         object-fit: contain;\n      right: 0; }\n"
+module.exports = ".login {\n  background-color: #202226;\n  min-height: 100vh;\n  position: absolute;\n  top: 0;\n  left: 0;\n  right: 0;\n  z-index: 3; }\n  .login ::ng-deep .mat-form-field-underline, .login ::ng-deep .mat-form-field-ripple {\n    background-color: #979797 !important; }\n  .login ::ng-deep .mat-form-field-label, .login ::ng-deep .mat-focused {\n    color: #979797 !important; }\n  .login ::ng-deep .mat-input-element {\n    caret-color: #979797;\n    color: #979797; }\n  .login .login__image {\n    margin: 0 auto;\n    width: 100px;\n    height: 100px;\n    display: block;\n    padding-top: 37px; }\n  .login .title {\n    font-size: 24px;\n    font-weight: bold;\n    font-style: normal;\n    font-stretch: condensed;\n    line-height: 1;\n    letter-spacing: normal;\n    text-align: center;\n    color: #ffffff;\n    font-family: \"Roboto\", sans-serif;\n    text-transform: uppercase; }\n  .login .form {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-orient: vertical;\n    -webkit-box-direction: normal;\n        -ms-flex-direction: column;\n            flex-direction: column;\n    -webkit-box-pack: center;\n        -ms-flex-pack: center;\n            justify-content: center;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center;\n    position: fixed;\n    left: 50%;\n    top: 60%;\n    -webkit-transform: translate(-50%, -50%);\n            transform: translate(-50%, -50%); }\n  .login .mat-focused .mat-form-field-label {\n    color: #979797 !important; }\n  .login .mat-form-field-ripple {\n    background-color: #979797 !important; }\n  .login .mat-input-element {\n    caret-color: #979797 !important; }\n  .login .mat-form-field-ripple {\n    background: #979797 !important; }\n  .login button {\n    width: 300px;\n    height: 50px;\n    border-radius: 2px;\n    -webkit-box-shadow: 0 2px 4px 0 rgba(0, 122, 255, 0.28);\n            box-shadow: 0 2px 4px 0 rgba(0, 122, 255, 0.28);\n    background-color: #bdbdbd;\n    color: white;\n    font-weight: bold;\n    margin-top: 92px;\n    border: 0; }\n  .login button[disabled] {\n    pointer-events: none;\n    background-color: #DFDFDF !important;\n    -webkit-box-shadow: none;\n    box-shadow: none;\n    color: #9F9F9F !important;\n    cursor: default; }\n  .login .footer-text {\n    position: fixed;\n    bottom: 31px;\n    text-align: center;\n    color: #989898;\n    font-size: 14px;\n    left: 0;\n    right: 0; }\n  .login mat-form-field {\n    max-width: 375px;\n    width: 90%; }\n  .login .password {\n    position: relative; }\n  .login .password .eye {\n      position: absolute;\n      width: 27px;\n      height: 18px;\n      -o-object-fit: contain;\n         object-fit: contain;\n      right: 0; }\n"
 
 /***/ }),
 
@@ -495,6 +546,7 @@ module.exports = ".login {\n  background-color: #202226;\n  height: 100vh;\n  po
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LoginComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_forms__ = __webpack_require__("./node_modules/@angular/forms/esm5/forms.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__("./node_modules/@angular/router/esm5/router.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -506,13 +558,16 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
+
 var LoginComponent = /** @class */ (function () {
-    function LoginComponent(formBuilder) {
+    function LoginComponent(formBuilder, router) {
         this.formBuilder = formBuilder;
+        this.router = router;
         this.myForm = this.formBuilder.group({
-            email: ['', __WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].required],
-            password: ['', __WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].required]
+            email: ['1@1', __WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].required],
+            password: ['1', __WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].required]
         });
+        this.isValid = true;
         this.show = false;
     }
     LoginComponent.prototype.ngOnInit = function () {
@@ -520,13 +575,23 @@ var LoginComponent = /** @class */ (function () {
     LoginComponent.prototype.password = function () {
         this.show = !this.show;
     };
+    LoginComponent.prototype.checkForm = function () {
+        console.log(this.myForm.value.password);
+        if (this.myForm.value.email === '1@1' && this.myForm.value.password === '1') {
+            this.isValid = true;
+            this.router.navigate(['meetings/create']);
+        }
+        else {
+            this.isValid = false;
+        }
+    };
     LoginComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
             selector: 'app-login',
             template: __webpack_require__("./src/app/login/login.component.html"),
             styles: [__webpack_require__("./src/app/login/login.component.scss")]
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["b" /* FormBuilder */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["b" /* FormBuilder */], __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* Router */]])
     ], LoginComponent);
     return LoginComponent;
 }());
@@ -538,14 +603,14 @@ var LoginComponent = /** @class */ (function () {
 /***/ "./src/app/meetings/meetings.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<h1 class=\"title-navbar\">Зустрічі</h1>\n<app-search></app-search>\n<section class=\"meetings\">\n  <div class=\"items\" *ngFor=\"let item of items\">\n    <div class=\"items__description\">\n      <p class=\"name\">{{item.header}}</p>\n      <p class=\"text\">{{item.text}}</p>\n    </div>\n    <div class=\"image\">\n      <img *ngIf=\"item.isDone\" src=\"../../assets/img/success.png\">\n      <img *ngIf=\"!item.isDone\" src=\"../../assets/img/declined.png\">\n    </div>\n  </div>\n</section>\n"
+module.exports = "<h1 class=\"title-navbar\">Зустрічі</h1>\r\n<div class=\"search-component\">\r\n  <input type=\"text\" placeholder=\"Пошук\" [(ngModel)]=\"userFilter.client.fullName\">\r\n</div>\r\n<img class=\"add-client\" src=\"../../assets/img/zustrichi.png\" (click)=\"CreateMeetting()\" routerLink=\"/meetings/create\">\r\n<section class=\"meetings\">\r\n  <div class=\"items\" *ngFor=\"let appointment of appointments | filterBy: userFilter\"  (click)=\"openMeetting(appointment)\" routerLink=\"/meetings/create\">\r\n    <div class=\"items__description\" *ngIf=\"appointment\">\r\n      <p class=\"name\">№{{appointment.number}},{{appointment.client?.fullName}} - {{appointment.date  | date:'dd.MM.yyyy'}}</p>\r\n      <div *ngFor=\"let task of appointment.appointmentUserTasks\">\r\n        <p class=\"text\">{{task.userTask.Name}}</p>\r\n      </div>\r\n    </div>\r\n    <div class=\"image\" *ngIf=\"appointment\">\r\n      <img *ngIf=\"appointment.state.Code=='closed'\" src=\"../../assets/img/success.png\">\r\n      <img *ngIf=\"appointment.state.Code!='closed'\" src=\"../../assets/img/declined.png\">\r\n    </div>\r\n  </div>\r\n</section>\r\n"
 
 /***/ }),
 
 /***/ "./src/app/meetings/meetings.component.scss":
 /***/ (function(module, exports) {
 
-module.exports = ".meetings .items {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: row;\n          flex-direction: row;\n  -ms-flex-pack: distribute;\n      justify-content: space-around;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  background-color: #ffffff;\n  border-top: solid 1px #ededed;\n  padding-top: 8px;\n  padding-bottom: 11px; }\n  .meetings .items .items__description .name {\n    font-size: 16px;\n    font-weight: 500;\n    font-style: normal;\n    font-stretch: normal;\n    line-height: 1.5;\n    letter-spacing: normal;\n    color: #000000;\n    margin: 0; }\n  .meetings .items .items__description .text {\n    font-size: 14px;\n    font-weight: normal;\n    font-style: normal;\n    font-stretch: normal;\n    line-height: 1.71;\n    letter-spacing: normal;\n    color: #989898;\n    margin: 0; }\n  .meetings .items .image img {\n    width: 36px;\n    height: 36px;\n    -o-object-fit: contain;\n       object-fit: contain; }\n"
+module.exports = ""
 
 /***/ }),
 
@@ -555,6 +620,7 @@ module.exports = ".meetings .items {\n  display: -webkit-box;\n  display: -ms-fl
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MeetingsComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_data_service__ = __webpack_require__("./src/app/services/data.service.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -565,32 +631,21 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+
 var MeetingsComponent = /** @class */ (function () {
-    function MeetingsComponent() {
-        this.items = [
-            {
-                header: 'Консультація - 26.01.2019',
-                text: 'Сергієнко Василь Іванович',
-                isDone: true
-            },
-            {
-                header: 'Консультація - 26.01.2019',
-                text: 'Сергієнко Василь Іванович',
-                isDone: true
-            },
-            {
-                header: 'Консультація - 26.01.2019',
-                text: 'Сергієнко Василь Іванович',
-                isDone: false
-            },
-            {
-                header: 'Консультація - 26.01.2019',
-                text: 'Сергієнко Василь Іванович',
-                isDone: false
-            }
-        ];
+    function MeetingsComponent(_data) {
+        this._data = _data;
+        this.userFilter = { client: {} };
     }
     MeetingsComponent.prototype.ngOnInit = function () {
+        this.appointments = this._data.appointmens;
+        console.log(this.appointments);
+    };
+    MeetingsComponent.prototype.openMeetting = function (app) {
+        this._data.currentAppointmenNumber = app.number;
+    };
+    MeetingsComponent.prototype.CreateMeetting = function () {
+        this._data.currentAppointmenNumber = 0;
     };
     MeetingsComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
@@ -598,7 +653,7 @@ var MeetingsComponent = /** @class */ (function () {
             template: __webpack_require__("./src/app/meetings/meetings.component.html"),
             styles: [__webpack_require__("./src/app/meetings/meetings.component.scss")]
         }),
-        __metadata("design:paramtypes", [])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__services_data_service__["a" /* DataService */]])
     ], MeetingsComponent);
     return MeetingsComponent;
 }());
@@ -610,14 +665,14 @@ var MeetingsComponent = /** @class */ (function () {
 /***/ "./src/app/search/search.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"search-component\">\n  <input type=\"text\" placeholder=\"Пошук\">\n</div>\n"
+module.exports = "<div class=\"search-component\">\r\n  <input type=\"text\" placeholder=\"Пошук\">\r\n</div>\r\n"
 
 /***/ }),
 
 /***/ "./src/app/search/search.component.scss":
 /***/ (function(module, exports) {
 
-module.exports = ".search-component input {\n  width: 100%;\n  height: 50px;\n  font-size: 16px;\n  font-weight: normal;\n  font-style: normal;\n  font-stretch: normal;\n  line-height: normal;\n  letter-spacing: normal;\n  color: #787b80;\n  padding-left: 55px;\n  margin-bottom: 20px;\n  border: 0;\n  background: url(\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAVCAYAAABCIB6VAAAAAXNSR0IArs4c6QAAAiNJREFUOBGllDFIHFEQhue9jbtqDIinCIZ0gojVgbWgpU1Ic5IiIDZiYxUCIYEYUAvLNImFIiiI14hN2oPUgpUkhV3SaHIiKJjcsTuZf/f2WOfeHh4uHPtm5pv/Zt+beYbUUy5X+qr1q3liem6IJyRckF+VyZySoaNCV/9OqTR9o9JaTJP1fN49LBlDn5h5OOvPro0x58y0vPTqRTnr12ubOr7sHb4l4oNE1Jx41nvpP/KeFoKxAG/YROYkifNBwqfZre+4YlQKUak2ZDardvzZ2uLkZF3jm8fHXdH3n++M4fdStSd/NJdXucGeXtauzhqVfhRwRQtqWwoRhj9gWwb8/lHXnlscVPr5qFSLuOyES7YlPmgHZHH68HvWbrg+35FD4MDHsUa+5myjpUSYvulgOzvl03zNoivQp/TEG/2jg+3sDB/naxbCVTivw7NBHWxnZ/g4X7M2nijxhhFN6WA7O+XTfM1ajCmcYRS9QZ9qwGWDAx/HGvmas5h99KP0ZRHNrwGXzT9+SVtyUfIukO9iLJobs48gJgrNn1c5/MlwRK/BM/G/G7rtwVo/zUsIsy+Dsp4AuCvsBloKp4+Dwp4mn89FMDL+uIyG5X3q+93TC6XZ31nxpjCcuDPue7sFQVCp1f5WRHzCJX5HGOKd3Mfb5a9DeeItwhDv5MkTf7AwinCJNy/6TqrULA6ut/fxDPZaYj6H9XvNg9bJtVH51v7RCID/Mr0QOLMlHbQAAAAASUVORK5CYII=\") no-repeat scroll 12px 14px;\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box;\n  background-color: white; }\n"
+module.exports = ".search-component input {\n  outline: none;\n  width: 100%;\n  height: 50px;\n  font-size: 16px;\n  font-weight: normal;\n  font-style: normal;\n  font-stretch: normal;\n  line-height: normal;\n  letter-spacing: normal;\n  color: #787b80;\n  padding-left: 55px;\n  margin-bottom: 20px;\n  border: 0;\n  background: url(\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAVCAYAAABCIB6VAAAAAXNSR0IArs4c6QAAAiNJREFUOBGllDFIHFEQhue9jbtqDIinCIZ0gojVgbWgpU1Ic5IiIDZiYxUCIYEYUAvLNImFIiiI14hN2oPUgpUkhV3SaHIiKJjcsTuZf/f2WOfeHh4uHPtm5pv/Zt+beYbUUy5X+qr1q3liem6IJyRckF+VyZySoaNCV/9OqTR9o9JaTJP1fN49LBlDn5h5OOvPro0x58y0vPTqRTnr12ubOr7sHb4l4oNE1Jx41nvpP/KeFoKxAG/YROYkifNBwqfZre+4YlQKUak2ZDardvzZ2uLkZF3jm8fHXdH3n++M4fdStSd/NJdXucGeXtauzhqVfhRwRQtqWwoRhj9gWwb8/lHXnlscVPr5qFSLuOyES7YlPmgHZHH68HvWbrg+35FD4MDHsUa+5myjpUSYvulgOzvl03zNoivQp/TEG/2jg+3sDB/naxbCVTivw7NBHWxnZ/g4X7M2nijxhhFN6WA7O+XTfM1ajCmcYRS9QZ9qwGWDAx/HGvmas5h99KP0ZRHNrwGXzT9+SVtyUfIukO9iLJobs48gJgrNn1c5/MlwRK/BM/G/G7rtwVo/zUsIsy+Dsp4AuCvsBloKp4+Dwp4mn89FMDL+uIyG5X3q+93TC6XZ31nxpjCcuDPue7sFQVCp1f5WRHzCJX5HGOKd3Mfb5a9DeeItwhDv5MkTf7AwinCJNy/6TqrULA6ut/fxDPZaYj6H9XvNg9bJtVH51v7RCID/Mr0QOLMlHbQAAAAASUVORK5CYII=\") no-repeat scroll 12px 14px;\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box;\n  background-color: white; }\n"
 
 /***/ }),
 
@@ -657,17 +712,146 @@ var SearchComponent = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/services/data.service.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DataService; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common_http__ = __webpack_require__("./node_modules/@angular/common/esm5/http.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_mergeMap__ = __webpack_require__("./node_modules/rxjs/_esm5/add/operator/mergeMap.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ngx_webstorage_service__ = __webpack_require__("./node_modules/ngx-webstorage-service/esm5/ngx-webstorage-service.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var __param = (this && this.__param) || function (paramIndex, decorator) {
+    return function (target, key) { decorator(target, key, paramIndex); }
+};
+
+
+
+
+var DataService = /** @class */ (function () {
+    function DataService(storage, http) {
+        this.storage = storage;
+        this.http = http;
+        this.appointmensSEQ = 1;
+        this.currentAppointmenNumber = 0;
+        this.ngOnInit();
+    }
+    DataService.prototype.getCurrentAppointment = function () {
+        var _this = this;
+        var appointment;
+        if (this.currentAppointmenNumber == 0) {
+            appointment = {
+                date: new Date(),
+                state: this.appointmentStaes.find(function (x) { return x.Code === 'new'; }),
+                AppointmentUserTasks: []
+            };
+        }
+        else {
+            appointment = this.appointmens.find(function (x) { return x.number === _this.currentAppointmenNumber; });
+        }
+        console.log(appointment);
+        return appointment;
+    };
+    DataService.prototype.SaveAppointment = function (appointment) {
+        if (!appointment.number) {
+            appointment.number = this.GetNextNumber();
+            this.appointmens.push(appointment);
+        }
+        else {
+            this.appointmens.forEach(function (element) {
+                if (element.number == appointment.number)
+                    element = appointment;
+            });
+        }
+        this.storage.set('Appointments', this.appointmens);
+        return appointment;
+    };
+    DataService.prototype.GetNextNumber = function () {
+        var number = this.storage.get('seq');
+        4;
+        console.log(number);
+        if (number) {
+            number = number + 1;
+        }
+        else
+            number = 1;
+        this.storage.set('seq', number);
+        console.log(number);
+        return number;
+    };
+    DataService.prototype.ngOnInit = function () {
+        this.taskStates = [
+            { Id: 1, Code: 'new', Name: 'Нова' },
+            { Id: 2, Code: 'send', Name: 'Відправлено СМС' },
+            { Id: 3, Code: 'verified', Name: 'Валідовано' },
+            { Id: 4, Code: 'started', Name: 'Розпочато надання' },
+            { Id: 5, Code: 'finished', Name: 'Завершено надання' },
+            { Id: 6, Code: 'closed', Name: 'Закрита' }
+        ];
+        this.appointmentStaes = [
+            { Id: 1, Code: 'new', Name: 'Нова' },
+            { Id: 2, Code: 'send', Name: 'Відправлено СМС' },
+            { Id: 3, Code: 'started', Name: 'Розпочато надання' },
+            { Id: 4, Code: 'closed', Name: 'Закрита' }
+        ];
+        this.appointmens = this.storage.get('Appointments');
+        if (!this.appointmens) {
+            this.appointmens = [];
+        }
+        ;
+        this.clients = [
+            { Id: 5, fullName: 'Федорец Максим Іванович', bornDate: new Date('1980-06-12'), phone: '0730711196', casePP: 'ФедМаІв120680Ч' },
+            { Id: 6, fullName: 'Сахаров Роман Іванович', bornDate: new Date('1982-02-10'), phone: '0730711196', casePP: 'СахРоІв100282Ч' },
+            { Id: 1, fullName: 'Сидоров Карлітос Хідальгович', bornDate: new Date('1982-12-18'), phone: '0730711196', casePP: 'ХідКаХі181282Ч' },
+            { Id: 10, fullName: 'Булавенко Сергій Вікторович', bornDate: new Date('1980-06-01'), phone: '0730711196', casePP: 'БулСеВі010680Ч' },
+            { Id: 8, fullName: 'Король Антон Ігорович', bornDate: new Date('1980-11-29'), phone: '0730711196', casePP: 'КорАнІг110688Ч' },
+            { Id: 12, fullName: 'Василенко Василь Васильович', bornDate: new Date('1955-06-26'), phone: '0730711196', casePP: 'ВасВаВа260655Ч' },
+            { Id: 13, fullName: 'Волков Микита Сергійович', bornDate: new Date('1983-07-01'), phone: '0730711196', casePP: 'ВолМиСе010783Ч' },
+            { Id: 14, fullName: 'Коваленко Коваль Ковальович', bornDate: new Date('1983-04-03'), phone: '0730711196', casePP: 'КовКоКо030483Ч' },
+            { Id: 15, fullName: 'Нагорний Микола Миколайович', bornDate: new Date('1986-02-24'), phone: '0730711196', casePP: 'НагМиМи240286Ж' },
+            { Id: 16, fullName: 'Смійчік Дмитро Сергійович', bornDate: new Date('1990-05-30'), phone: '0730711196', casePP: 'СміДмСе300590Ч' },
+        ];
+        this.tasks = [
+            { Id: 1, Name: 'Консультування', projectName: 'Health Link', packageName: 'ДКТ', count: 55 },
+            { Id: 1, Name: 'Тестування', projectName: 'Health Link', packageName: 'ДКТ', count: 23 },
+            { Id: 1, Name: 'Доведення до обліку', projectName: 'Health Link', packageName: 'ДУ', count: 11 },
+            { Id: 1, Name: 'Видача презервативів', projectName: 'Health Link', packageName: 'Супровід', count: 76 },
+            { Id: 1, Name: 'Обмін шприців', projectName: 'Health Link', packageName: 'Супровід', count: 0 },
+        ];
+        console.log('init data service');
+    };
+    DataService = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["C" /* Injectable */])(),
+        __param(0, Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Inject */])(__WEBPACK_IMPORTED_MODULE_3_ngx_webstorage_service__["a" /* LOCAL_STORAGE */])),
+        __metadata("design:paramtypes", [Object, __WEBPACK_IMPORTED_MODULE_1__angular_common_http__["a" /* HttpClient */]])
+    ], DataService);
+    return DataService;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/task/task.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<h1 class=\"title-navbar\">Мої завдання</h1>\n<app-search></app-search>\n<section class=\"task\">\n  <mat-expansion-panel expanded=\"true\" (opened)=\"panelOpenState = true\" (closed)=\"panelOpenState = false\">\n    <mat-expansion-panel-header [ngClass]=\"{'active-header': panelOpenState, 'non-active-header': !panelOpenState}\">\n      <mat-panel-title>\n        HealthLink\n      </mat-panel-title>\n    </mat-expansion-panel-header>\n\n    <mat-expansion-panel expanded=\"true\" (opened)=\"panelOpenStateChild = true\" (closed)=\"panelOpenStateChild = false\">\n      <mat-expansion-panel-header class=\"child\" [ngClass]=\"{'active-header': panelOpenStateChild, 'non-active-header': !panelOpenStateChild}\">\n        <mat-panel-title>\n          ДКТ\n        </mat-panel-title>\n      </mat-expansion-panel-header>\n\n      <div class=\"expanded-items\">\n        <div class=\"expanded-items__item active\">\n          <p>Пакет 1 проекту 1 проекту 1</p>\n          <p>50</p>\n        </div>\n        <div class=\"expanded-items__item child\">\n          <p>Консультування,<br>Тестування\n          <div routerLink=\"/meetings/create\">\n            <img src=\"../../assets/img/calen.png\">\n          </div>\n        </div>\n        <div class=\"expanded-items__item\">\n          <p>Пакет 1 проекту 1 проекту 1</p>\n          <p>50</p>\n        </div>\n        <div class=\"expanded-items__item\">\n          <p>Пакет 1 проекту 1 проекту 1</p>\n          <p>50</p>\n        </div>\n        <div class=\"expanded-items__item\">\n          <p>Пакет 1 проекту 1 проекту 1</p>\n          <p>50</p>\n        </div>\n      </div>\n    </mat-expansion-panel>\n    <mat-expansion-panel expanded=\"true\" (opened)=\"panelOpenStateChild1 = true\" (closed)=\"panelOpenStateChild1 = false\">\n      <mat-expansion-panel-header class=\"child\" [ngClass]=\"{'active-header': panelOpenStateChild, 'non-active-header': !panelOpenStateChild}\">\n        <mat-panel-title>\n          ДУ\n        </mat-panel-title>\n      </mat-expansion-panel-header>\n\n      <div class=\"expanded-items\" >\n        <div class=\"expanded-items__item active\">\n          <p>Пакет 1 проекту 1 проекту 1</p>\n          <p>50</p>\n        </div>\n        <div class=\"expanded-items__item child\">\n          <p> доведення до<br> обліку</p>\n          <div routerLink=\"/meetings/create\">\n            <img src=\"../../assets/img/calen.png\">\n          </div>\n        </div>\n        <div class=\"expanded-items__item\">\n          <p>Пакет 1 проекту 1 проекту 1</p>\n          <p>50</p>\n        </div>\n        <div class=\"expanded-items__item\">\n          <p>Пакет 1 проекту 1 проекту 1</p>\n          <p>50</p>\n        </div>\n        <div class=\"expanded-items__item\">\n          <p>Пакет 1 проекту 1 проекту 1</p>\n          <p>50</p>\n        </div>\n      </div>\n    </mat-expansion-panel>\n    <mat-expansion-panel expanded=\"true\" (opened)=\"panelOpenStateChild2 = true\" (closed)=\"panelOpenStateChild2 = false\">\n      <mat-expansion-panel-header class=\"child\" [ngClass]=\"{'active-header': panelOpenStateChild, 'non-active-header': !panelOpenStateChild}\">\n        <mat-panel-title>\n          Супровід\n        </mat-panel-title>\n      </mat-expansion-panel-header>\n\n      <div class=\"expanded-items\" routerLink=\"/meetings/create\">\n        <div class=\"expanded-items__item active\">\n          <p>Пакет 1 проекту 1 проекту 1</p>\n          <p>50</p>\n        </div>\n        <div class=\"expanded-items__item child\">\n          <p> видача презервативів,<br> обмін шприців</p>\n          <div routerLink=\"/meetings/create\">\n            <img src=\"../../assets/img/calen.png\">\n          </div>\n        </div>\n        <div class=\"expanded-items__item\">\n          <p>Пакет 1 проекту 1 проекту 1</p>\n          <p>50</p>\n        </div>\n        <div class=\"expanded-items__item\">\n          <p>Пакет 1 проекту 1 проекту 1</p>\n          <p>50</p>\n        </div>\n        <div class=\"expanded-items__item\">\n          <p>Пакет 1 проекту 1 проекту 1</p>\n          <p>50</p>\n        </div>\n      </div>\n    </mat-expansion-panel>\n  </mat-expansion-panel>\n  <mat-expansion-panel disabled=\"true\">\n  <mat-expansion-panel-header class=\"non-active-header\">\n    <mat-panel-title>\n      Выдача презервативов\n    </mat-panel-title>\n  </mat-expansion-panel-header>\n\n  </mat-expansion-panel>\n  <mat-expansion-panel disabled=\"true\">\n    <mat-expansion-panel-header class=\"non-active-header\">\n      <mat-panel-title>\n        Доведение до учета\n      </mat-panel-title>\n    </mat-expansion-panel-header>\n\n  </mat-expansion-panel>\n  <mat-expansion-panel disabled=\"true\">\n  <mat-expansion-panel-header class=\"non-active-header\">\n    <mat-panel-title>\n      Тестирование\n    </mat-panel-title>\n  </mat-expansion-panel-header>\n</mat-expansion-panel>\n  <mat-expansion-panel disabled=\"true\">\n    <mat-expansion-panel-header class=\"non-active-header\">\n      <mat-panel-title>\n        Консультирование\n      </mat-panel-title>\n    </mat-expansion-panel-header>\n  </mat-expansion-panel>\n</section>\n"
+module.exports = "<h1 class=\"title-navbar\">Завдання</h1>\r\n<div class=\"search-component\">\r\n  <input type=\"text\" placeholder=\"Пошук\" [(ngModel)]=\"userFilter.Name\">\r\n</div>\r\n<img class=\"add-client\" src=\"../../assets/img/add-client.png\" (click)=\"meetingCreate()\" routerLink=\"/meetings/create\">\r\n\r\n<section class=\"meetings\">\r\n  <div class=\"items\" *ngFor=\"let item of tasks | filterBy: userFilter\">\r\n    <div class=\"items__description\">\r\n      <p class=\"name\">{{item.Name}}</p>\r\n      <p  class=\"client-number\">  {{item.projectName}} | {{item.packageName}}</p>\r\n    </div>\r\n  </div>\r\n</section>\r\n"
 
 /***/ }),
 
 /***/ "./src/app/task/task.component.scss":
 /***/ (function(module, exports) {
 
-module.exports = ".task {\n  max-width: 340px;\n  margin: 0 auto; }\n\n.non-active-header {\n  background-color: #ffffff !important; }\n\n.non-active-header .mat-expansion-panel-header-title {\n    font-size: 18px;\n    font-weight: normal;\n    font-style: normal;\n    font-stretch: normal;\n    line-height: normal;\n    letter-spacing: normal;\n    color: #000000; }\n\n.active-header {\n  height: 51px;\n  border-radius: 2px;\n  background-color: #2c93f3; }\n\n.active-header .mat-expansion-panel-header-title {\n    font-size: 18px;\n    font-weight: normal;\n    font-style: normal;\n    font-stretch: normal;\n    line-height: normal;\n    letter-spacing: normal;\n    color: #ffffff; }\n\n.mat-expansion-panel:not(.mat-expanded) .mat-expansion-panel-header:not([aria-disabled=true]).cdk-keyboard-focused, .mat-expansion-panel:not(.mat-expanded) .mat-expansion-panel-header:not([aria-disabled=true]).cdk-program-focused, .mat-expansion-panel:not(.mat-expanded) .mat-expansion-panel-header:not([aria-disabled=true]) .mat-expansion-panel-header:not(.non-active-header) .mat-expansion-panel-header:not(.child):hover {\n  background: #2c93f3; }\n\n.mat-expansion-panel-header.mat-expanded:focus, .mat-expansion-panel-header:not(.non-active-header), .mat-expansion-panel-header.mat-expanded, .mat-expansion-panel-header:not(.child):hover {\n  background: #2c93f3; }\n\n.child.active-header {\n  height: 44px !important;\n  border-radius: 2px;\n  background-color: #e2e7eb !important; }\n\n.child.active-header .mat-expansion-panel-header-title {\n    font-size: 16px;\n    font-weight: bold;\n    font-style: normal;\n    font-stretch: normal;\n    line-height: normal;\n    letter-spacing: normal;\n    color: #2c93f3; }\n\n.child.non-active-header .mat-expansion-panel-header-title {\n  font-size: 16px;\n  font-weight: normal;\n  font-style: normal;\n  font-stretch: normal;\n  line-height: normal;\n  letter-spacing: normal;\n  color: #000000; }\n\n.expanded-items__item {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: row;\n          flex-direction: row;\n  -ms-flex-pack: distribute;\n      justify-content: space-around;\n  max-width: 282px;\n  padding: 15px 0;\n  border-bottom: solid 1px #d3d3d3; }\n\n.expanded-items__item p {\n    font-size: 14px;\n    font-weight: normal;\n    font-style: normal;\n    font-stretch: normal;\n    line-height: normal;\n    letter-spacing: normal;\n    color: #8b8b8b;\n    margin: 0; }\n\n.expanded-items__item.child p {\n  font-size: 16px;\n  font-weight: normal;\n  font-style: normal;\n  font-stretch: normal;\n  line-height: 1.38;\n  letter-spacing: normal;\n  color: #000000; }\n\n.expanded-items__item.child div {\n  width: 44px;\n  height: 44px;\n  border-radius: 25px;\n  -webkit-box-shadow: 0 2px 4px 0 rgba(0, 122, 255, 0.28);\n          box-shadow: 0 2px 4px 0 rgba(0, 122, 255, 0.28);\n  background-color: #2c93f3;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: row;\n          flex-direction: row;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center; }\n\n.task .mat-expansion-panel-content.mat-expanded > .mat-expansion-panel-body {\n  padding: 0 !important; }\n\n.mat-expansion-indicator::after {\n  color: white !important; }\n\n.expanded-items__item.active p {\n  font-size: 14px;\n  font-weight: bold;\n  font-style: normal;\n  font-stretch: normal;\n  line-height: normal;\n  letter-spacing: normal;\n  color: #2c93f3; }\n"
+module.exports = ".task {\n  max-width: 340px;\n  margin: 0 auto; }\n\n.non-active-header {\n  background-color: #ffffff !important; }\n\n.non-active-header .mat-expansion-panel-header-title {\n    font-size: 18px;\n    font-weight: normal;\n    font-style: normal;\n    font-stretch: normal;\n    line-height: normal;\n    letter-spacing: normal;\n    color: #000000; }\n\n.active-header {\n  height: 51px;\n  border-radius: 2px;\n  background-color: #bdbdbd; }\n\n.active-header .mat-expansion-panel-header-title {\n    font-size: 18px;\n    font-weight: normal;\n    font-style: normal;\n    font-stretch: normal;\n    line-height: normal;\n    letter-spacing: normal;\n    color: #ffffff; }\n\n::ng-deep mat-expansion-panel {\n  -webkit-box-shadow: none !important;\n          box-shadow: none !important; }\n\n.mat-expansion-panel:not(.mat-expanded) .mat-expansion-panel-header:not([aria-disabled=true]).cdk-keyboard-focused, .mat-expansion-panel:not(.mat-expanded) .mat-expansion-panel-header:not([aria-disabled=true]).cdk-program-focused, .mat-expansion-panel:not(.mat-expanded) .mat-expansion-panel-header:not([aria-disabled=true]) .mat-expansion-panel-header:not(.non-active-header) .mat-expansion-panel-header:not(.child):hover {\n  background: #bdbdbd; }\n\n.mat-expansion-panel-header.mat-expanded:focus, .mat-expansion-panel-header:not(.non-active-header), .mat-expansion-panel-header.mat-expanded, .mat-expansion-panel-header:not(.child):hover {\n  background: #bdbdbd; }\n\n::ng-deep .mat-expansion-panel-body {\n  padding: 2px 2px 2px 2px !important; }\n\n.child.active-header {\n  height: 44px !important;\n  border-radius: 2px;\n  margin: 5px;\n  padding: 0px 15px !important;\n  background-color: #eaf4fd !important; }\n\n.child.active-header .mat-expansion-panel-header-title {\n    font-size: 16px;\n    font-weight: bold;\n    font-style: normal;\n    font-stretch: normal;\n    line-height: normal;\n    letter-spacing: normal;\n    color: #bdbdbd; }\n\n.child.non-active-header {\n  margin: 5px;\n  padding: 0px 15px !important;\n  background-color: #eaf4fd !important; }\n\n.child.non-active-header .mat-expansion-panel-header-title {\n    font-size: 16px;\n    font-weight: normal;\n    font-style: normal;\n    font-stretch: normal;\n    line-height: normal;\n    letter-spacing: normal;\n    color: #000000; }\n\n.item-service {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: justify;\n      -ms-flex-pack: justify;\n          justify-content: space-between;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  padding: 5px 0px 5px 30px !important;\n  max-width: 282px;\n  border-bottom: solid 1px #d3d3d3; }\n\n.item-service p {\n    font-size: 14px;\n    color: #8b8b8b; }\n\n.item-service.child {\n  padding-left: 40px !important; }\n\n.item-service.child p {\n    font-size: 16px;\n    font-weight: normal;\n    font-style: normal;\n    font-stretch: normal;\n    line-height: 1.38;\n    letter-spacing: normal;\n    color: #000000; }\n\n.item-service.child div {\n    width: 44px;\n    height: 44px;\n    border-radius: 25px;\n    -webkit-box-shadow: 0 2px 4px 0 rgba(0, 122, 255, 0.28);\n            box-shadow: 0 2px 4px 0 rgba(0, 122, 255, 0.28);\n    background-color: #bdbdbd;\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-orient: horizontal;\n    -webkit-box-direction: normal;\n        -ms-flex-direction: row;\n            flex-direction: row;\n    -webkit-box-pack: center;\n        -ms-flex-pack: center;\n            justify-content: center;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center; }\n\n.task .mat-expansion-panel-content.mat-expanded > .mat-expansion-panel-body {\n  padding: 0 !important; }\n\n.mat-expansion-indicator::after {\n  color: white !important; }\n\n.item-service.active p {\n  font-size: 14px;\n  font-weight: bold;\n  font-style: normal;\n  font-stretch: normal;\n  line-height: normal;\n  letter-spacing: normal;\n  color: #bdbdbd; }\n\n.client-number {\n  font-size: 14px;\n  font-weight: normal;\n  font-style: normal;\n  font-stretch: normal;\n  line-height: 1.71;\n  letter-spacing: normal;\n  color: #989898;\n  margin: 0; }\n"
 
 /***/ }),
 
@@ -677,6 +861,7 @@ module.exports = ".task {\n  max-width: 340px;\n  margin: 0 auto; }\n\n.non-acti
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TaskComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_data_service__ = __webpack_require__("./src/app/services/data.service.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -687,11 +872,16 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+
+
 var TaskComponent = /** @class */ (function () {
-    function TaskComponent() {
-        this.panelOpenState = true;
+    function TaskComponent(_data) {
+        this._data = _data;
+        this.tasks = [];
+        this.userFilter = {};
     }
     TaskComponent.prototype.ngOnInit = function () {
+        this.tasks = this._data.tasks;
     };
     TaskComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
@@ -699,7 +889,8 @@ var TaskComponent = /** @class */ (function () {
             template: __webpack_require__("./src/app/task/task.component.html"),
             styles: [__webpack_require__("./src/app/task/task.component.scss")]
         }),
-        __metadata("design:paramtypes", [])
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["C" /* Injectable */])(),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__services_data_service__["a" /* DataService */]])
     ], TaskComponent);
     return TaskComponent;
 }());
