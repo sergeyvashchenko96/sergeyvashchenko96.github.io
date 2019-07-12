@@ -3239,25 +3239,25 @@ li {
 
 @font-face {
   font-family: 'Gordita';
-  src: url('../fonts/GorditaMedium.otf') format('opentype');
+  src: url('../fonts/Bodoni.otf') format('opentype');
   font-weight: 500;
   font-style: normal;
 }
 @font-face {
   font-family: 'Gordita';
-  src: url('../fonts/GorditaBold.otf') format('opentype');
+  src: url('../fonts/Bodoni.otf') format('opentype');
   font-weight: 700;
   font-style: normal;
 }
 @font-face {
   font-family: 'Gordita';
-  src: url('../fonts/GorditaRegular.otf') format('opentype');
+  src: url('../fonts/Bodoni.otf') format('opentype');
   font-weight: 400;
   font-style: normal;
 }
 @font-face {
   font-family: 'Good';
-  src: url('../fonts/Good Vibes Pro.ttf') format('opentype');
+  src: url('../fonts/Bodoni.otf') format('opentype');
   font-weight: 400;
   font-style: normal;
 }

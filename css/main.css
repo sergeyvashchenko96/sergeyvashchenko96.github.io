@@ -2040,7 +2040,7 @@ pointer-events: all;
   }
 
   @font-face {
-    font-family: 'Bodoniia';
+    font-family: 'Bodoni';
     src: url("../fonts/Georgia/Georgia.eot");
     src: url("../fonts/Georgia/Georgia.eot?#iefix") format("embedded-opentype"), url("../fonts/Georgia/Georgia.woff") format("woff"), url("../fonts/Georgia/Georgia.svg#Georgia") format("svg");
     font-weight: 400;
@@ -2049,22 +2049,22 @@ pointer-events: all;
 
   @font-face {
     font-family: 'Comfortaa';
-    src: url("../fonts/Comfortaa/Comfortaa-Regular.eot");
-    src: url("../fonts/Comfortaa/Comfortaa-Regular.eot?#iefix") format("embedded-opentype"), url("../fonts/Comfortaa/Comfortaa-Regular.woff") format("woff"), url("../fonts/Comfortaa/Comfortaa-Regular.svg#Comfortaa-Regular") format("svg");
+    src: url("../fonts/Bodoni.otf");
+    src: url("../fonts/Bodoni.otf") format("embedded-opentype"), url("../fonts/Comfortaa/Comfortaa-Regular.woff") format("woff"), url("../fonts/Comfortaa/Comfortaa-Regular.svg#Comfortaa-Regular") format("svg");
     font-weight: 400;
     font-style: normal;
   }
 
   @font-face {
     font-family: 'AngelicaC';
-    src: url("../fonts/pixhite-fonts/AngelicaC.woff") format("woff"), url("../fonts/pixhite-fonts/AngelicaC.woff2") format("woff2");
+    src: url("../fonts/Bodoni.otf") format("woff"), url("../fonts/pixhite-fonts/AngelicaC.woff2") format("woff2");
     font-weight: 400;
     font-style: normal;
   }
 
   @font-face {
     font-family: 'AGLettericaC';
-    src: url("../fonts/pixhite-fonts/AGLettericaC.woff") format("woff"), url("../fonts/pixhite-fonts/AGLettericaC.woff2") format("woff2");
+    src: url("../fonts/Bodoni.otf") format("woff"), url("../fonts/pixhite-fonts/AGLettericaC.woff2") format("woff2");
     font-weight: 400;
     font-style: normal;
   }
@@ -2115,13 +2115,13 @@ pointer-events: all;
 
   .page {
     color: #333;
-    font-family: "Bodoniia", sans-serif;
+    font-family: "Bodoni", sans-serif;
   }
 
   .block_title {
     padding-bottom: 20px;
     color: #333;
-    font-family: "Bodoniia", sans-serif;
+    font-family: "Bodoni", sans-serif;
     font-size: 30px;
     font-weight: 700;
     text-align: center;
@@ -3470,10 +3470,6 @@ pointer-events: all;
   .block_job {
     padding: 70px 0 80px;
     text-align: center;
-    background-color: #f8f9fb;
-    background-image: url('../img/content/block_job_bg.png');
-    background-attachment: fixed;
-    background-repeat: no-repeat;
     background-position-x: -95px;
     background-position-y: -260px;
   }
@@ -3591,7 +3587,7 @@ pointer-events: all;
     padding: 25px 0 0 50px;
     min-height: 140px;
     color: #f62459;
-    font-family: "Bodoniia", sans-serif;
+    font-family: "Bodoni", sans-serif;
     font-size: 46px;
     font-weight: 400;
     padding-left: 0;
@@ -3651,7 +3647,6 @@ pointer-events: all;
 
   .block_order {
     padding: 110px 0;
-    background: url(../img/content/order-bg.jpg) no-repeat center/cover #fafcfc;
   }
 
   .block_order .block_title {
@@ -3713,7 +3708,7 @@ pointer-events: all;
     font-size: 40px;
     font-weight: 300;
     line-height: 1;
-    font-family: "Bodoniia", sans-serif;
+    font-family: "Bodoni", sans-serif;
     text-transform: uppercase;
     background: -webkit-linear-gradient(#000, #000) no-repeat left bottom/70px 2px;
     background: linear-gradient(#000, #000) no-repeat left bottom/70px 2px;
@@ -3802,7 +3797,7 @@ pointer-events: all;
   .block_salary .calc-wrapper .calc .total {
     margin-top: 41px;
     color: #5d78e5;
-    font-family: "Bodoniia", sans-serif;
+    font-family: "Bodoni", sans-serif;
     font-size: 26px;
     line-height: 1;
   }
@@ -4019,7 +4014,7 @@ pointer-events: all;
   }
 
   .section-title b {
-    font-family: 'Bodoniia';
+    font-family: 'Bodoni';
     font-weight: 700;
   }
   /* GENERAL */

@@ -2,11 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="be6e1ab1-ac2c-4b9b-80e8-5360195fa9cb" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/fonts/Bodoni.otf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/css/exotica.webflow.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/exotica.webflow.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/item1.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/item1.png" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -20,11 +19,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="399">
-              <caret line="245" column="63" selection-start-line="245" selection-start-column="63" selection-end-line="245" selection-end-column="63" />
+            <state relative-caret-position="999">
+              <caret line="269" column="38" lean-forward="true" selection-start-line="269" selection-start-column="38" selection-end-line="269" selection-end-column="38" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#div#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -37,29 +36,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/css/main.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="512">
-              <caret line="3684" column="3" lean-forward="true" selection-start-line="3684" selection-start-column="3" selection-end-line="3684" selection-end-column="3" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="webflow.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/css/webflow.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="761">
-              <caret line="1672" column="50" lean-forward="true" selection-start-line="1672" selection-start-column="50" selection-end-line="1672" selection-end-column="50" />
+            <state relative-caret-position="344">
+              <caret line="1736" column="3" selection-start-line="1736" selection-start-column="3" selection-end-line="1736" selection-end-column="3" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="exotica.webflow.css" pinned="false" current-in-tab="true">
+      <file leaf-file-name="exotica.webflow.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/css/exotica.webflow.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="625">
-              <caret line="3247" column="58" lean-forward="true" selection-start-line="3247" selection-start-column="58" selection-end-line="3247" selection-end-column="58" />
+            <state relative-caret-position="419">
+              <caret line="3242" column="19" lean-forward="true" selection-start-line="3242" selection-start-column="19" selection-end-line="3242" selection-end-column="19" />
             </state>
           </provider>
         </entry>
@@ -85,11 +75,17 @@
       <find>item</find>
       <find>w-slider</find>
       <find>girl</find>
-      <find>row-,</find>
       <find>order/b</find>
       <find>font-fa</find>
       <find>font-family</find>
       <find>Good</find>
+      <find>Georg</find>
+      <find>row-,</find>
+      <find>@font</find>
+      <find>Bodoniia</find>
+      <find>bodo</find>
+      <find>url('../img/content/block_job_bg.png')</find>
+      <find>.block_order</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -195,7 +191,8 @@
       <workItem from="1562680352816" duration="4429000" />
       <workItem from="1562741456176" duration="1369000" />
       <workItem from="1562748952494" duration="2065000" />
-      <workItem from="1562830659990" duration="2089000" />
+      <workItem from="1562830659990" duration="3713000" />
+      <workItem from="1562932921562" duration="552000" />
     </task>
     <task id="LOCAL-00001" summary="iq">
       <created>1562683875235</created>
@@ -225,25 +222,38 @@
       <option name="project" value="LOCAL" />
       <updated>1562749218782</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="main site">
+      <created>1562832871149</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1562832871149</updated>
+    </task>
+    <task id="LOCAL-00006" summary="main site">
+      <created>1562832957266</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1562832957266</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10575000" />
+    <option name="totallyTimeSpent" value="12751000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-11" y="-11" width="3862" height="2122" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19706114" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Version Control" order="7" visible="true" weight="0.32955715" />
+      <window_info anchor="bottom" id="Version Control" order="7" weight="0.32955715" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.33573636" />
+      <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.3362513" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -266,6 +276,42 @@
     <option name="LAST_COMMIT_MESSAGE" value="main site" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6125">
+          <caret line="245" column="63" selection-start-line="245" selection-start-column="63" selection-end-line="245" selection-end-column="63" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h1#0;n#div#0;n#div#0;n#div#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#0;n#div#0;n#div#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#section#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92100">
+          <caret line="3684" column="3" lean-forward="true" selection-start-line="3684" selection-start-column="3" selection-end-line="3684" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/webflow.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="41800">
+          <caret line="1672" column="50" lean-forward="true" selection-start-line="1672" selection-start-column="50" selection-end-line="1672" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/exotica.webflow.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="81000">
+          <caret line="3240" column="25" lean-forward="true" selection-start-line="3240" selection-start-column="25" selection-end-line="3240" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="5225">
@@ -363,13 +409,6 @@
     <entry file="file://$PROJECT_DIR$/iq/img/advantages.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/../index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="850">
-          <caret line="172" column="78" selection-start-line="172" selection-start-column="37" selection-end-line="172" selection-end-column="78" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/iq/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="25">
@@ -387,10 +426,38 @@
     <entry file="file://$PROJECT_DIR$/css/normalize.css">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/../index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1075">
+          <caret line="211" column="30" lean-forward="true" selection-start-line="211" selection-start-column="30" selection-end-line="211" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="625">
+          <caret line="3690" column="3" lean-forward="true" selection-start-line="3690" selection-start-column="3" selection-end-line="3690" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/webflow.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="344">
+          <caret line="1736" column="3" selection-start-line="1736" selection-start-column="3" selection-end-line="1736" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/exotica.webflow.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="419">
+          <caret line="3242" column="19" lean-forward="true" selection-start-line="3242" selection-start-column="19" selection-end-line="3242" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="245" column="63" selection-start-line="245" selection-start-column="63" selection-end-line="245" selection-end-column="63" />
+        <state relative-caret-position="999">
+          <caret line="269" column="38" lean-forward="true" selection-start-line="269" selection-start-column="38" selection-end-line="269" selection-end-column="38" />
           <folding>
             <element signature="n#style#0;n#div#0;n#div#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -399,27 +466,6 @@
             <element signature="n#style#0;n#a#0;n#div#0;n#div#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#section#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/webflow.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="761">
-          <caret line="1672" column="50" lean-forward="true" selection-start-line="1672" selection-start-column="50" selection-end-line="1672" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/main.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="512">
-          <caret line="3684" column="3" lean-forward="true" selection-start-line="3684" selection-start-column="3" selection-end-line="3684" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/exotica.webflow.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="625">
-          <caret line="3247" column="58" lean-forward="true" selection-start-line="3247" selection-start-column="58" selection-end-line="3247" selection-end-column="58" />
         </state>
       </provider>
     </entry>
