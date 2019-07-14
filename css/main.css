@@ -4889,7 +4889,7 @@ input, textarea {
     border-bottom: 1px solid #de9d5d;
 }
 
-.submit-form > input {
+.submit-form > input, .btn.style-1 {
     width: 100%;
     height: 60px;
     background-image: linear-gradient(to right, #91673c 0%, #de9d5d 50.8108%, #91673c 100%);
