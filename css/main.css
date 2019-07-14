@@ -4934,5 +4934,16 @@ input, textarea {
 .vk {
     background-color: #3f77a5;
 }
-
+@media only screen and (max-width: 579px) {
+    .block_order .form-block{
+        flex-direction: column;
+    }
+    .mobile-form-width{
+        width: 100% !important;
+    }
+    .block_order .form-block .image{
+        width: 100%;
+        height: 398px !important;
+    }
+}
 /* pixwhite edits END*/
