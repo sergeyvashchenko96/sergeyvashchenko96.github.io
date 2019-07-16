@@ -4704,7 +4704,7 @@ header .phone a {
     }
 
     .peoples-mobile {
-        display: block;
+        display: none;
         width: auto;
     }
 
@@ -4948,8 +4948,8 @@ input, textarea {
         height: 398px !important;
     }
 }
+
 /* pixwhite edits END*/
-/*.menu{*/
-    /*background: white !important;*/
-    /*border-bottom: 2px solid b;*/
-/*}*/
+.menu {
+    height: 125px !important;
+}
