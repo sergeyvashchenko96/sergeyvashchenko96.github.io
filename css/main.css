@@ -4948,5 +4948,8 @@ input, textarea {
         height: 398px !important;
     }
 }
-
 /* pixwhite edits END*/
+.menu{
+    background: white !important;
+    border-bottom: 2px solid black;
+}
